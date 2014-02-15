@@ -1,7 +1,6 @@
 Cress Egg Heads 
 ===============
-######David Honess
-Time lapse photography with the Raspberry Pi Camera Board
+Time lapse photography with the Raspberry Pi Camera Board.
 
 
 ![image](./images/cover.jpg "Cover Image")
@@ -31,18 +30,20 @@ Time lapse photography with the Raspberry Pi Camera Board
 *	Washing up liquid and bowl
 *	Pencils or crayons
 *	Kitchen roll
-*	1 x Flip book (if possible, can be about anything)
-*	1 x Dinner knife
-*	1 x Tea Spoon
-*	1 x Plate
-*	1 x Plastic Spray Bottle with Trigger
-*	1 x Packet of cress seeds
-*	1 x Raspberry Pi
-*	1 x SD card (with latest Raspbian installed)
-*	1 x Monitor + cables
-*	1 x USB Keyboard
-*	1 x Raspberry Pi Camera Board
-*	1 x Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
+*	Flip book (if possible, can be about anything)
+*	Dinner knife
+*	Tea Spoon
+*	Plate
+*	Plastic Spray Bottle with Trigger
+*	Packet of cress seeds (£1.55 from B&Q)
+*	Raspberry Pi
+*	Micro USB power adapter
+*	An SD Card with Raspbian already set up through NOOBS
+*	USB Keyboard
+*	HDMI cable
+*	A Monitor or TV
+*	Raspberry Pi Camera Board
+*	Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
 
 ##Introduction
 Ideally begin with a discussion of how plants germinate from seeds and that they need to sense the correct conditions in order to start growing.  Usually moisture and the right temperature.
@@ -57,7 +58,7 @@ Explain that if you were to capture images of the same landscape every hour for 
 
 Wrap up by explaining that if we make cress egg heads we can use the technique of time lapse photography to speed up time see the hair (cress) appearing to grow.  The only trouble is we need to let the time elapse and do the work of capturing the images along the way.  This is where the Raspberry Pi comes in.  First you’ll need to make some cress egg heads though!
 
-##Making a cress egg head
+##Step 1: Making a cress egg head
 
 Begin by soft boiling the egg in a saucepan.  Take care to avoid splashing hot water and burning yourself.  Boil for no more than 3 minutes.  Remove the egg using the spoon and allow to cool before handling.
 
@@ -79,7 +80,30 @@ Place the egg into an egg cup, then place the egg cup onto a plate.
 
 Use finger and thumb to sprinkle some cress seeds onto the cotton wool, the plate will catch any that miss.  That’s it, the egg head is now ready to grow.  Place the egg cup in a place where it will catch sunlight during the day.
 
-##Setting up the Camera Board
+## Step 2: Setting Up your Pi
+First check that you have all the parts you need to get your Raspberry Pi set up and working.
+
+- Raspberry Pi
+- Micro USB power adapter
+- An SD Card with Raspbian already set up through NOOBS
+- USB Keyboard
+- HDMI cable
+- A Monitor or TV
+
+**Activity Checklist**
+
+1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card. 
+2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor. 
+3.	Plug in a USB keyboard and Mouse into the USB slots on the Pi.
+4.	Plug in the micro USB power supply and you should see some text appear on your screen.
+5.	When prompted to login type:
+
+	```
+	Login: pi
+	Password: raspberry
+	```
+
+##Step 3: Setting up the Camera Board
 
 Follow the official instructions [here](http://www.raspberrypi.org/camera "Camera | Raspberry Pi") to setup and test the Raspberry Pi Camera Board.
 
@@ -89,13 +113,7 @@ Next set up the 360 Gooseneck Mount.  This will allow you to aim the camera at t
 
 One end of this inserts into the headphone jack on the Pi (it just uses this to hold itself and does nothing to the audio jack), the other end is a screw with a couple of plastic washers that secure the camera board to the gooseneck. 
 
-Unless you previously changed it you should login to the Pi with the default username `pi` and the password `raspberry`.
-
-You will find yourself at the prompt below.  If you have configured your Pi to automatically go into the desktop interface, use the start button to logout of the desktop.
-
-`pi@raspberrypi ~ $ _`
-
-You can take a still image using the following command.
+After you have logged into the Raspberry Pi again you can take a still image using the following command.
 
 `raspistill –o test.jpg –t 5000`
 
@@ -103,7 +121,7 @@ This will take a still image and save it to a file called `test.jpg` after a fiv
 
 If you now use the `ls` command you’ll see the file `test.jpg` is shown in the list.  Clearly it would be too laborious for a person to sit in front of the Raspberry Pi for a whole week (day and night) running this command every hour.  Fortunately there is a way to automate this process which will allow the Raspberry Pi to record the time lapse film completely unattended.
 
-##Recording a short test run time lapse film
+##Step 4: Recording a short test run time lapse
 
 It’s a good idea to do a dry run first as that will make you comfortable with the process before attempting a much longer one.  You can discard the images afterwards.  The command below will automatically capture an image every 10 seconds for 10 minutes.   Time has to be specified in milliseconds, so 10 seconds is 10000 and ten minutes is 600000.
 
@@ -151,7 +169,7 @@ If you want to delete all the files from this test run then use the following co
 
 `rm test_*.*`
 
-##Start recording the main time lapse film
+##Step 5: Start recording the main time lapse film
 
 Before you start time lapse recording the cress egg heads there are several things you should consider.  The most important is the physical location where the recording will take place.  This needs to be somewhere warm with sunlight and that can be left *undisturbed* for a whole week (a classroom windowsill might not be ideal).  Even slight movements will seem really noticeable in the final cut.
 
@@ -197,7 +215,7 @@ The first image will only be captured after the first hour so you still have one
 
 Disconnect the keyboard first and with one final check of the camera preview, remove the monitor cable from the Raspberry Pi without moving anything.  *That is now it*.  **Do not touch for 7 days**.  A quick visual check that everything is still okay is the red LED on the camera board.  If that goes off one of two things has happened.  Either the time lapse recording has finished after 7 days of elapsed time or something has gone wrong, loss of power for example.  So a quick glance at the red LED every now and again is sensible.
 
-##Letting the cress grow and looking after it
+##Step 6: Letting the cress grow and looking after it
 
 The main priority now is to avoid touching or moving anything to ensure the final time lapse film will look good.
 
@@ -211,7 +229,7 @@ If the time lapse is being recorded on school premises it can be nice to select 
 
 When the cress starts to grow it may lean towards the direction of sunlight, this is normal.  This can be mitigated to a certain extent by rotating the egg cups to face the opposite way, however this will be really noticeable in the final time lapse film.
 
-##Creating the time lapse movie file and playing it back
+##Step 7: Creating the time lapse movie file
 
 The cress should be gaining some height by the end of the week.  Wait for the red LED on the camera board to go out before diving in.  That should happen exactly one week, to the minute, after you started the time lapse.
 
