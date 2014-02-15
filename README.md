@@ -125,11 +125,19 @@ Use the following command to install avconv.  You only need to do this once.
 
 This will ask to download about 20 MB of data, say yes and allow the install to proceed.  It will take several minutes.  Once complete you can use the command below to construct the video file from the individual images.  Enter it all on one line.
 
-`avconv –r 10 –i test_%04d.jpg –r 10 –vcodec libx264 –crf 20 -g 15 test_timelapse.mp4`
+```
+avconv –r 10 –i test_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+test_timelapse.mp4
+```
 
 This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice its quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film though.  The command below will do just that.
 
-`avconv –r 10 –i test_%04d.jpg –r 10 –vcodec libx264 –crf 20 -g 15 -vf scale=1296:972 test_timelapse.mp4`
+```
+avconv –r 10 –i test_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+-vf scale=1296:972 test_timelapse.mp4`
+```
 
 So `–r` means the video frame rate, here we’re using 10 frames a second, that’s about right for a time lapse film.  It’s used twice to avoid avconv dropping similar looking frames.  The `–i` is the input filename, notice the `%40d` from before.  The `–vcodec` specifies the codec (encode/decode) format of the video you’re making.  YouTube uses this codec for streaming (h264).  The `–crf` option specifies the compression quality level.  20 is about average, lower numbers give higher quality but also increase file size.  The `–g` option is the GOP value (this is needed if you upload the video to YouTube later).  Finally the `–vf` option specifies a video filter that scales the images down to the given height and width.  Scale values can be tweaked as necessary.
 
@@ -213,7 +221,11 @@ Remember that producing the final time lapse movie will be quite a lot quicker o
 
 The image files will always remain however many times you encode the movie file, so feel free to rebuild the final time lapse movie as many times as necessary perhaps trying different video filter scales and or frame rates on each attempt.  Look back to the test run section if you need a reminder of what the different parts of the avconv command mean.  If encoding on the Raspberry Pi I suggest to first build the video with a scale video filter like this, enter everything on one line.
 
-`avconv –r 10 –i cress_%04d.jpg –r 10 –vcodec libx264 –crf 20 -g 15 -vf scale=1296:972 cress_timelapse.mp4`
+```
+avconv –r 10 –i cress_%04d.jpg –r 10
+–vcodec libx264 –crf 20 -g 15 
+-vf scale=1296:972 cress_timelapse.mp4
+```
 
 This will take longer than the test run to finish but only because there are more frames to encode.  When you are returned to the command prompt you can play back the movie using the following command.
 
@@ -221,8 +233,11 @@ This will take longer than the test run to finish but only because there are mor
 
 If you’re happy with the way it looks you could then rebuild the movie at full resolution by leaving out the video filter part of the command.  This will take a lot longer (on the Pi) but the end product will look better if uploaded to social media.  Here is the command.
 
-`avconv –r 10 –i cress_%04d.jpg –r 10 –vcodec libx264 –crf 20 -g 15 cress_timelapse_full.mp4`
-
+```
+avconv –r 10 –i cress_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+cress_timelapse_full.mp4
+```
 
 Once complete the full video can be played back using the following command.
 
