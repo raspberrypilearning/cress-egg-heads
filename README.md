@@ -6,15 +6,15 @@ Time lapse photography with the Raspberry Pi Camera Board.
 ![image](./images/cover.jpg "Cover Image")
 
 ##Lesson objective
-* Understand what time lapse photography is
-* Understand how cress seeds germinate and grow
-* Understand how to make a time lapse film
+*	Understand what time lapse photography is
+*	Understand how cress seeds germinate and grow
+*	Understand how to make a time lapse film
 
 ##Lesson outcome
-* To have grown some cress from seeds
-* To have made one or more cress egg heads
-* To have recorded a time lapse film of them growing over a period of 1 week
-* To play back the time lapse film and see the cress growing rapidly
+*	To have grown some cress from seeds
+*	To have made one or more cress egg heads
+*	To have recorded a time lapse film of them growing over a period of 1 week
+*	To play back the time lapse film and see the cress growing rapidly
 
 ##Time
 *	1-2 hour initially for setting up
@@ -94,7 +94,7 @@ First check that you have all the parts you need to get your Raspberry Pi set up
 
 1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card. 
 2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor. 
-3.	Plug in a USB keyboard and Mouse into the USB slots on the Pi.
+3.	Plug a USB keyboard into a USB slot on the Pi.
 4.	Plug in the micro USB power supply and you should see some text appear on your screen.
 5.	When prompted to login type:
 
