@@ -117,7 +117,7 @@ After you have logged into the Raspberry Pi again you can take a still image usi
 
 `raspistill –o test.jpg –t 5000`
 
-This will take a still image and save it to a file called `test.jpg` after a five second delay.  The `–o` means output and the `–t` again means time.  Here we’re specifying 5000 milliseconds or 5 seconds.
+This will take a still image and save it to a file called `test.jpg` after a five second delay.  The `–o` means output and the `–t` means time.  Here we’re specifying 5000 milliseconds or 5 seconds.
 
 If you now use the `ls` command you’ll see the file `test.jpg` is shown in the list.  Clearly it would be too laborious for a person to sit in front of the Raspberry Pi for a whole week (day and night) running this command every hour.  Fortunately there is a way to automate this process which will allow the Raspberry Pi to record the time lapse film completely unattended.
 
