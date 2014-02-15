@@ -105,7 +105,7 @@ First check that you have all the parts you need to get your Raspberry Pi set up
 
 ##Step 3: Setting up the Camera Board
 
-Follow the official instructions [here](http://www.raspberrypi.org/camera "Camera | Raspberry Pi") to setup and test the Raspberry Pi Camera Board.
+Follow the official instructions [here](http://www.raspberrypi.org/camera "Camera | Raspberry Pi") to setup and test the Raspberry Pi Camera Board.  Stop once you have successfully used a few of the example commands.
 
 Next set up the 360 Gooseneck Mount.  This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time lapse recording.
 
