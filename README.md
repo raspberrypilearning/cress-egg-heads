@@ -154,7 +154,7 @@ This will make a video at the same resolution as the individual images (2592 x 1
 ```
 avconv –r 10 –i test_%04d.jpg –r 10 
 –vcodec libx264 –crf 20 -g 15 
--vf scale=1296:972 test_timelapse.mp4`
+-vf scale=1296:972 test_timelapse.mp4
 ```
 
 So `–r` means the video frame rate, here we’re using 10 frames a second, that’s about right for a time lapse film.  It’s used twice to avoid avconv dropping similar looking frames.  The `–i` is the input filename, notice the `%40d` from before.  The `–vcodec` specifies the codec (encode/decode) format of the video you’re making.  YouTube uses this codec for streaming (h264).  The `–crf` option specifies the compression quality level.  20 is about average, lower numbers give higher quality but also increase file size.  The `–g` option is the GOP value (this is needed if you upload the video to YouTube later).  Finally the `–vf` option specifies a video filter that scales the images down to the given height and width.  Scale values can be tweaked as necessary.
