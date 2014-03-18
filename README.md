@@ -5,12 +5,12 @@ Time lapse photography with the Raspberry Pi Camera Board.
 
 ![image](./images/cover.jpg "Cover Image")
 
-##Lesson objective
+##Lesson objectives
 *	Understand what time lapse photography is
 *	Understand how cress seeds germinate and grow
 *	Understand how to make a time lapse film
 
-##Lesson outcome
+##Lesson outcomes
 *	To have grown some cress from seeds
 *	To have made one or more cress egg heads
 *	To have recorded a time lapse film of them growing over a period of 1 week
@@ -32,16 +32,16 @@ Time lapse photography with the Raspberry Pi Camera Board.
 *	Kitchen roll
 *	Flip book (if possible, can be about anything)
 *	Dinner knife
-*	Tea Spoon
+*	Teaspoon
 *	Plate
-*	Plastic Spray Bottle with Trigger
+*	Plastic spray bottle with trigger
 *	Packet of cress seeds (£1.55 from B&Q)
 *	Raspberry Pi
 *	Micro USB power adapter
-*	An SD Card with Raspbian already set up through NOOBS
-*	USB Keyboard
+*	An SD card with Raspbian already set up through NOOBS
+*	USB keyboard
 *	HDMI cable
-*	A Monitor or TV
+*	A monitor or TV
 *	Raspberry Pi Camera Board
 *	Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
 
@@ -85,10 +85,10 @@ First check that you have all the parts you need to get your Raspberry Pi set up
 
 - Raspberry Pi
 - Micro USB power adapter
-- An SD Card with Raspbian already set up through NOOBS
-- USB Keyboard
+- An SD card with Raspbian already set up through NOOBS
+- USB keyboard
 - HDMI cable
-- A Monitor or TV
+- A monitor or TV
 
 **Activity Checklist**
 
@@ -149,7 +149,7 @@ avconv –r 10 –i test_%04d.jpg –r 10
 test_timelapse.mp4
 ```
 
-This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice its quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film though.  The command below will do just that.
+This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice it's quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film though.  The command below will do just that.
 
 ```
 avconv –r 10 –i test_%04d.jpg –r 10 
@@ -157,7 +157,7 @@ avconv –r 10 –i test_%04d.jpg –r 10
 -vf scale=1296:972 test_timelapse.mp4
 ```
 
-So `–r` means the video frame rate, here we’re using 10 frames a second, that’s about right for a time lapse film.  It’s used twice to avoid avconv dropping similar looking frames.  The `–i` is the input filename, notice the `%40d` from before.  The `–vcodec` specifies the codec (encode/decode) format of the video you’re making.  YouTube uses this codec for streaming (h264).  The `–crf` option specifies the compression quality level.  20 is about average, lower numbers give higher quality but also increase file size.  The `–g` option is the GOP value (this is needed if you upload the video to YouTube later).  Finally the `–vf` option specifies a video filter that scales the images down to the given height and width.  Scale values can be tweaked as necessary.
+So `–r` means the video frame rate, here we’re using 10 frames a second, that’s about right for a time lapse film.  It’s used twice to avoid avconv dropping similar looking frames.  The `–i` is the input filename, notice the `%04d` from before.  The `–vcodec` specifies the codec (encode/decode) format of the video you’re making.  YouTube uses this codec for streaming (h264).  The `–crf` option specifies the compression quality level.  20 is about average, lower numbers give higher quality but also increase file size.  The `–g` option is the GOP value (this is needed if you upload the video to YouTube later).  Finally the `–vf` option specifies a video filter that scales the images down to the given height and width.  Scale values can be tweaked as necessary.
 
 Once the encoding process has finished you’ll be returned to the command prompt.  It may take a while to finish so be patient.  Maybe it’s time for a cup of tea.  You can then use the command below to play back the film on the Raspberry Pi.
 
@@ -221,7 +221,7 @@ The main priority now is to avoid touching or moving anything to ensure the fina
 
 *Check the cress egg heads at least once a day (preferably more) to ensure the cotton wool does not dry out.*
 
-Use the plastic spray bottle to top op the moisture as necessary, moist/damp is good – soaking is not.  Often a single spray is enough per eggshell.
+Use the plastic spray bottle to top up the moisture as necessary, moist/damp is good – soaking is not.  Often a single spray is enough per eggshell.
 
 If the room you have chosen is too cold you may see mould developing, this is bad news and could mean you’ll have to start again.  Remember the seeds need warmth, light and water.
 
