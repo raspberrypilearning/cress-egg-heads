@@ -169,25 +169,26 @@ Please note that it is much faster to do the encoding on a desktop PC or Mac.  V
 If you want to delete all the files from this test run then use the following command:
 
 `rm test_*.*`
+
 ##Step 5: Start recording the main time lapse film
 
-Before you start time lapse recording the cress egg heads there are several things you should consider.  The most important is the physical location where the recording will take place.  This needs to be somewhere warm with sunlight and that can be left *undisturbed* for a whole week (a classroom windowsill might not be ideal).  Even slight movements will seem really noticeable in the final cut.
+Before you start time lapse recording the cress egg heads there are several things you should consider.  The most important is the physical location where the recording will take place.  This needs to be somewhere warm with sunlight that can be left *undisturbed* for a whole week; a classroom windowsill might not be ideal.  Even slight movements will be noticeable in the final cut.
 
 A power failure will break the sequence of file numbering so you should try to prevent any loss of power after the recording starts.  If this does happen you’ll need to start again.
 
-Having some manmade light source on the cress egg heads will allow growth to be recorded at night and will make for a nicer end result.  Otherwise it tends to go light-nothing-light-nothing etc.
+Having a man-made light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result.  Without this setup, the recording will switch abruptly between light and darkness.
 
-You may also wish to have a network cable plugged in so that you can log into the Pi remotely and monitor that the file creation process is continuing as expected (read up about SSH).
+You may also wish to have a network cable plugged in, so that you can log into the Pi remotely and monitor that the file creation process is continuing as expected (read up about SSH).
 
-Space on the SD card is also a consideration.  If you run out of free space half way through the week some footage will be lost.  This can be predicted with a simple calculation though and then you can ensure there is enough free space on the SD card before starting.
+Space on the SD card should also be taken into consideration.  If you run out of free space half way through the week some footage will be lost.  This can be predicted with a simple calculation to ensure there is enough free space on the SD card before starting.
 
-Let’s do that first.  On average an image will be about 3 MB in size (roughly).  24 hours in a day, so if we record one image per hour, 3 MB x 24 = 72 MB a day.  7 days in a week so 72 MB x 7 = 504 MB.  504 MB!  So if you ensure we have at least 1000 MB (1 GB) free on the SD card we should be fine.
+Let’s check this first.  On average, an image will be about 3 MB in size. There are 24 hours in a day so if we record one image per hour, the space needed is 3 MB x 24 = 72 MB a day.  In a week we will need 72 MB x 7 = 504 MB.  504 MB!  So if we ensure we have at least 1000 MB (1 GB) free on the SD card we should be fine.
 
-You can use the following command to check how much free space you have.
+You can use the following command to check how much free space you have:
 
 `df -h`
 
-This should show you something like the text below.  Look at the size value for rootfs under the available space column (Avail).  See below, here it shows 2 GB is free.
+This should show you something like the text below.  Look at the size value for rootfs under the available space column (Avail).  In the example below it shows 2 GB is free.
 
 ```
 Filesystem      Size  Used Avail Use% Mounted on
@@ -199,21 +200,21 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs            44M     0   44M   0% /run/shm
 /dev/mmcblk0p1   56M   19M   38M  34% /boot
 ```
-If it looks like you don’t have enough space it can often be easier to just use a different SD card or one of larger capacity.
+If it looks like you don’t have enough space you can use an SD card with a larger capacity.
 
-Once you have identified a location take everything there and set up the Raspberry Pi, Camera Board, Gooseneck mount, keyboard, monitor and cress egg heads.  Boot up the Raspberry Pi, log in as normal and use the camera preview command to get everything positioned correctly.
+Once you have identified a suitable filming location, set up the Raspberry Pi, Camera Board, Gooseneck mount, keyboard, monitor and cress egg heads there.  Boot up the Raspberry Pi, log in as normal and use the camera preview command to get everything positioned correctly:
 
 `raspivid –t 0`
 
-If there are multiple cress egg heads try to get them all in the shot.  Remember that still images will appear a little more zoomed out than the camera preview.  Once you’re satisfied with the position of the Camera and egg heads you can press `Ctrl – C` to stop the preview.
+If there are multiple cress egg heads, try to get them all in the shot.  Remember that still images will appear a little more zoomed out than the camera preview.  Once you’re satisfied with the position of the camera and egg heads, you can press `Ctrl – C` to stop the preview.
 
-Now you’re ready to start the time lapse recording.  **Drumroll**.  Firstly we need to work out the interval time and total time in milliseconds to give to the raspistill command.  One hour is 1000 * 60 * 60 = 3600000.  So one day is 3600000 * 24 = 86400000.  So one week is 86400000 * 7 = 604800000.  So therefore our final command should be this.
+Now you’re ready to start the time lapse recording.  Firstly, we need to work out the interval time and total time in milliseconds to give to the raspistill command.  One hour is 1000 * 60 * 60 = 3600000.  One day is 3600000 * 24 = 86400000.  One week is 86400000 * 7 = 604800000.  Therefore our final command should be this:
 
 `raspistill –o cress_%04d.jpg –tl 3600000 –t 604800000`
 
-The first image will only be captured after the first hour so you still have one hour to do any final adjustments and disconnect the keyboard and monitor.  For belt and braces you can even secure the Pi and gooseneck mount in place with some tape.  Write down the exact time that you started it, you’ll want to know this in 7 days’ time.
+The first image will only be captured after the first hour, so you still have one hour to make any final adjustments and disconnect the keyboard and monitor.  For extra reliability you could secure the Pi and Gooseneck mount in place with some tape.  Write down the exact time you start the time lapse; you’ll want to know this at the end of the week.
 
-Disconnect the keyboard first and with one final check of the camera preview, remove the monitor cable from the Raspberry Pi without moving anything.  *That is now it*.  **Do not touch for 7 days**.  A quick visual check that everything is still okay is the red LED on the camera board.  If that goes off one of two things has happened.  Either the time lapse recording has finished after 7 days of elapsed time or something has gone wrong, loss of power for example.  So a quick glance at the red LED every now and again is sensible.
+Disconnect the keyboard first and with one final check of the camera preview, remove the monitor cable from the Raspberry Pi without moving anything.  *Setup is now complete*.  **It should be left undisturbed for 7 days**.  A quick visual check that everything is still okay is the red LED on the camera board.  If the LED goes off, either the time lapse recording has finished after 7 days of elapsed time, or the recording has been interrupted by a problem such as loss of power. Occasional checks of the LED are recommended.
 
 ##Step 6: Letting the cress grow and looking after it
 
