@@ -222,23 +222,23 @@ The main priority now is to avoid touching or moving anything to ensure the fina
 
 *Check the cress egg heads at least once a day (preferably more) to ensure the cotton wool does not dry out.*
 
-Use the plastic spray bottle to top up the moisture as necessary, moist/damp is good – soaking is not.  Often a single spray is enough per eggshell.
+Use the plastic spray bottle to top up the moisture as necessary; it should be damp but not soaking.  Often a single spray per eggshell is enough.
 
-If the room you have chosen is too cold you may see mould developing, this is bad news and could mean you’ll have to start again.  Remember the seeds need warmth, light and water.
+If the room you have chosen is too cold you may see mould developing, which may mean you’ll have to start again.  Remember the seeds need warmth, light and water.
 
-If the time lapse is being recorded on school premises it can be nice to select one pupil per day to join the teacher for watering the cress.  This extends the sense of investment the pupils have in the project beyond just making the cress egg heads at the start.  This may also motivate them to work hard and behave in other classes in the hope of being chosen for this task.
+If the time lapse is being recorded on school premises, it can be nice to select one pupil per day to join the teacher for watering the cress.  This extends the sense of investment the pupils have in the project beyond just making the cress egg heads at the start.  This may also motivate them to work hard and behave in other classes so that they are chosen for this task.
 
-When the cress starts to grow it may lean towards the direction of sunlight, this is normal.  This can be mitigated to a certain extent by rotating the egg cups to face the opposite way, however this will be really noticeable in the final time lapse film.
+When the cress starts to grow it may lean towards the direction of the sunlight; this is normal.  This can be mitigated to a certain extent by rotating the egg cups to face the opposite way; however this will be noticeable in the final time lapse film.
 
-##Step 7: Creating the time lapse movie file
+##Step 7: Creating the time lapse film file
 
-The cress should be gaining some height by the end of the week.  Wait for the red LED on the camera board to go out before diving in.  That should happen exactly one week, to the minute, after you started the time lapse.
+The cress should be gaining some height by the end of the week.  Wait for the red LED on the camera board to go out before retrieving the images.  This should happen exactly one week, to the minute, after you started the time lapse.
 
-Reconnect the monitor and keyboard and use the ls command.  You should find that about 170 images have been created.  These are now precious files and you need to look after them, it’s a good idea to back them up onto a USB flash drive.  If you want to move the Raspberry Pi back to the classroom before encoding the time lapse video then ensure you shut the Pi down using the `sudo halt` command.  This will shut down the Pi safely and cleanly (general practise is to wait for the *ACT* (activity) LED to stop blinking on the Pi before removing the power cable).
+Reconnect the monitor and keyboard and use the ls command.  You should find that about 170 images have been created.  These files must be preserved carefully; it’s a good idea to back them up onto a USB flash drive.  If you want to move the Raspberry Pi back to the classroom before encoding the time lapse video, ensure you shut the Pi down using the `sudo halt` command.  This will shut down the Pi safely and cleanly; it is generally advisable to wait for the *ACT* (activity) LED to stop blinking on the Pi before removing the power cable.
 
-Remember that producing the final time lapse movie will be quite a lot quicker on a modern desktop PC as opposed to the Raspberry Pi.  The Pi is up to the task it will just require more time for the processing.
+Remember that producing the final time lapse film will be much quicker on a modern desktop PC.  The Pi can perform the task but it will require more time for processing the film.
 
-The image files will always remain however many times you encode the movie file, so feel free to rebuild the final time lapse movie as many times as necessary perhaps trying different video filter scales and or frame rates on each attempt.  Look back to the test run section if you need a reminder of what the different parts of the avconv command mean.  If encoding on the Raspberry Pi I suggest to first build the video with a scale video filter like this, enter everything on one line.
+The image files will always remain however many times you encode the film file, so the final time lapse film can be rebuilt as many times as is necessary. One approach might be to try different video filter scales or frame rates on each attempt.  Refer to the test run section if you need a reminder of what the different parts of the avconv command mean.  If encoding on the Raspberry Pi, it is recommended to first build the video with a scale video filter as in the command below;  as before, enter the entire command on one line.
 
 ```
 avconv –r 10 –i cress_%04d.jpg –r 10
@@ -246,11 +246,11 @@ avconv –r 10 –i cress_%04d.jpg –r 10
 -vf scale=1296:972 cress_timelapse.mp4
 ```
 
-This will take longer than the test run to finish but only because there are more frames to encode.  When you are returned to the command prompt you can play back the movie using the following command.
+This will take longer than the test run to finish as there are more frames to encode.  When you are returned to the command prompt you can play back the film using the following command:
 
 `omxplayer cress_timelapse.mp4 –o hdmi`
 
-If you’re happy with the way it looks you could then rebuild the movie at full resolution by leaving out the video filter part of the command.  This will take a lot longer (on the Pi) but the end product will look better if uploaded to social media.  Here is the command.
+If you’re happy with the way it looks, you could then rebuild the film at full resolution by leaving out the video filter part of the command.  This will take a lot longer on the Pi, but the end product will look better if uploaded to social media.  Here is the command:
 
 ```
 avconv –r 10 –i cress_%04d.jpg –r 10 
@@ -258,8 +258,8 @@ avconv –r 10 –i cress_%04d.jpg –r 10
 cress_timelapse_full.mp4
 ```
 
-Once complete the full video can be played back using the following command.
+Once complete the full video can be played back using the following command:
 
 `omxplayer cress_timelapse_full.mp4 –o hdmi`
 
-To finish off it will be nice to send each pupil home with a copy of the final time lapse video along with their, now fully grown, cress egg head.
+To finish off it would be nice to send each pupil home with a copy of the final time lapse video, along with their fully grown cress egg head.
