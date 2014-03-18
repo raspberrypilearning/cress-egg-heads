@@ -105,21 +105,21 @@ First check that you have all the parts you need to get your Raspberry Pi set up
 
 ##Step 3: Setting up the Camera Board
 
-Follow the official instructions [here](http://www.raspberrypi.org/camera "Camera | Raspberry Pi") to setup and test the Raspberry Pi Camera Board.  Stop once you have successfully used a few of the example commands.
+Follow the official instructions [here](http://www.raspberrypi.org/camera "Camera | Raspberry Pi") to set up and test the Raspberry Pi Camera Board.  Stop once you have successfully used a few of the example commands.
 
 Next set up the 360 Gooseneck Mount.  This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time lapse recording.
 
 ![image](./images/camera-mount.jpg "Camera Board 360 Gooseneck Mount")
 
-One end of this inserts into the headphone jack on the Pi (it just uses this to hold itself and does nothing to the audio jack), the other end is a screw with a couple of plastic washers that secure the camera board to the gooseneck. 
+One end of the mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck. 
 
-After you have logged into the Raspberry Pi again you can take a still image using the following command.
+After you have logged into the Raspberry Pi again, you can take a still image using the following command:
 
 `raspistill –o test.jpg –t 5000`
 
 This will take a still image and save it to a file called `test.jpg` after a five second delay.  The `–o` means output and the `–t` means time.  Here we’re specifying 5000 milliseconds or 5 seconds.
 
-If you now use the `ls` command you’ll see the file `test.jpg` is shown in the list.  Clearly it would be too laborious for a person to sit in front of the Raspberry Pi for a whole week (day and night) running this command every hour.  Fortunately there is a way to automate this process which will allow the Raspberry Pi to record the time lapse film completely unattended.
+If you now use the `ls` command you’ll see the file `test.jpg` is shown in the list.  It would obviously be too time-consuming to sit in front of the Raspberry Pi for a whole week running this command every hour.  Fortunately, there is a way to automate this process which will allow the Raspberry Pi to record the time lapse film completely unattended.
 
 ##Step 4: Recording a short test run time lapse
 
