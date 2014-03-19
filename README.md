@@ -41,7 +41,7 @@ Time lapse photography with the Raspberry Pi Camera Board.
 *	Plastic spray bottle with trigger
 *	Packet of cress seeds (£1.55 from B&Q)
 *	Raspberry Pi
-*	Micro USB power adapter
+*	Micro USB power adaptor
 *	An SD card with Raspbian already set up through NOOBS
 *	USB keyboard
 *	HDMI cable
@@ -90,7 +90,7 @@ Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the
 First check that you have all the parts you need to get your Raspberry Pi set up and working.
 
 - Raspberry Pi
-- Micro USB power adapter
+- Micro USB power adaptor
 - An SD card with Raspbian already set up through NOOBS
 - USB keyboard
 - HDMI cable
