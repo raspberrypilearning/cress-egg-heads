@@ -121,7 +121,7 @@ One end of the mount inserts into the headphone jack on the Pi; it only uses thi
 
 After you have logged into the Raspberry Pi again, you can take a still image using the following command:
 
-    `raspistill –o test.jpg –t 5000`
+`raspistill –o test.jpg –t 5000`
 
 This will take a still image and save it to a file called `test.jpg` after a five second delay.  The `–o` means output and the `–t` means time.  Here we’re specifying 5000 milliseconds or 5 seconds.
 
@@ -131,11 +131,11 @@ If you now use the `ls` command you’ll see the file `test.jpg` is shown in the
 
 It’s a good idea to perform a dry run first, as this will familiarise you with the process before attempting a longer time lapse.  You can discard the images afterwards.  The command below will automatically capture an image every 10 seconds for 10 minutes. Time must be specified in milliseconds, so 10 seconds is 10000 and ten minutes is 600000.
 
-    `raspistill –o test_%04d.jpg –tl 10000 –t 600000`
+`raspistill –o test_%04d.jpg –tl 10000 –t 600000`
 
 The `–o` specifies the output as before, the `–tl` is the interval to take pictures at and `–t` is the total recording time.  The `%04d` will add a four digit sequential number at the end of each filename.
 
-    `test_0001.jpg` `test_0002.jpg` ...
+`test_0001.jpg` `test_0002.jpg` ...
 
 Avoid moving the camera for best results; even a tiny movement will look like a huge jolt when you play back the final time lapse film.  While the time lapse is recording you will see the camera preview window, with periodic flashes of the still images as they are taken.  Allow the ten minutes to elapse; the camera preview will then stop and you’ll be returned to the command prompt.
 
@@ -146,35 +146,35 @@ Let’s take this test run all the way to the end.  Next we need to stitch the 6
 
 Use the following command to install avconv.  You only need to do this once.
 
-    `sudo apt-get install libav-tools`
+`sudo apt-get install libav-tools`
 
 This will ask to download about 20 MB of data; say yes and allow the install to proceed.  It will take several minutes.  Once complete, you can use the command below to construct the video file from the individual images.  Enter it all on one line.
 
-    ```
-    avconv –r 10 –i test_%04d.jpg –r 10 
-    –vcodec libx264 –crf 20 -g 15 
-    test_timelapse.mp4
-    ```
+```
+avconv –r 10 –i test_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+test_timelapse.mp4
+```
 
-This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice its quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film; the command below will do just that.
+This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice it's quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film; the command below will do just that.
 
-    ```
-    avconv –r 10 –i test_%04d.jpg –r 10 
-    –vcodec libx264 –crf 20 -g 15 
-    -vf scale=1296:972 test_timelapse.mp4
-    ```
+```
+avconv –r 10 –i test_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+-vf scale=1296:972 test_timelapse.mp4
+```
 
 The `–r` specifies the video frame rate. Here we’re using 10 frames a second; this is adequate for a time lapse film.  It’s used twice to avoid avconv dropping similar looking frames.  The `–i` is the input filename; notice the `%04d` from before.  The `–vcodec` specifies the codec (encode/decode) format of the video you’re making. We've specified H264; YouTube uses this codec for streaming.  The `–crf` specifies the compression quality level.  20 is an average value; lower numbers give higher quality but also increase file size.  The `–g` specifies the GOP value; this is needed if you upload the video to YouTube later.  Finally, the `–vf` specifies a video filter that scales the images down to the given height and width.  Scale values can be tweaked as necessary.
 
 Once the encoding process has finished you’ll be returned to the command prompt.  It may take a while to finish so be patient; maybe it’s time for a cup of tea.  When the process has completed you can use the command below to play back the film on the Raspberry Pi.
 
-    `omxplayer test_timelapse.mp4 –o hdmi`
+`omxplayer test_timelapse.mp4 –o hdmi`
 
 Please note that it is much faster to do the encoding on a desktop PC or Mac.  Visit [this page](http://libav.org/download.html "Get Libav") to download the appropriate version for your operating system.
 
 If you want to delete all the files from this test run then use the following command:
 
-    `rm test_*.*`
+`rm test_*.*`
 
 ##Step 5: Start recording the main time lapse film
 
@@ -192,31 +192,31 @@ Let’s check this first.  On average, an image will be about 3 MB in size. Ther
 
 You can use the following command to check how much free space you have:
 
-    `df -h`
+`df -h`
 
 This should show you something like the text below.  Look at the size value for rootfs under the available space column (Avail).  In the example below it shows 2 GB is free.
 
-    ```
-    Filesystem      Size  Used Avail Use% Mounted on
-    rootfs          3.6G  1.5G  2.0G  43% /
-    /dev/root       3.6G  1.5G  2.0G  43% /
-    devtmpfs        101M     0  101M   0% /dev
-    tmpfs            22M  232K   22M   2% /run
-    tmpfs           5.0M     0  5.0M   0% /run/lock
-    tmpfs            44M     0   44M   0% /run/shm
-    /dev/mmcblk0p1   56M   19M   38M  34% /boot
-    ```
+```
+Filesystem      Size  Used Avail Use% Mounted on
+rootfs          3.6G  1.5G  2.0G  43% /
+/dev/root       3.6G  1.5G  2.0G  43% /
+devtmpfs        101M     0  101M   0% /dev
+tmpfs            22M  232K   22M   2% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            44M     0   44M   0% /run/shm
+/dev/mmcblk0p1   56M   19M   38M  34% /boot
+```
 If it looks like you don’t have enough space you can use an SD card with a larger capacity.
 
 Once you have identified a suitable filming location, set up the Raspberry Pi, Camera Board, Gooseneck mount, keyboard, monitor and cress egg heads there.  Boot up the Raspberry Pi, log in as normal and use the camera preview command to get everything positioned correctly:
 
-    `raspivid –t 0`
+`raspivid –t 0`
 
 If there are multiple cress egg heads, try to get them all in the shot.  Remember that still images will appear a little more zoomed out than the camera preview.  Once you’re satisfied with the position of the camera and egg heads, you can press `Ctrl – C` to stop the preview.
 
 Now you’re ready to start the time lapse recording.  Firstly, we need to work out the interval time and total time in milliseconds to give to the raspistill command.  One hour is 1000 * 60 * 60 = 3600000.  One day is 3600000 * 24 = 86400000.  One week is 86400000 * 7 = 604800000.  Therefore our final command should be this:
 
-    `raspistill –o cress_%04d.jpg –tl 3600000 –t 604800000`
+`raspistill –o cress_%04d.jpg –tl 3600000 –t 604800000`
 
 The first image will only be captured after the first hour, so you still have one hour to make any final adjustments and disconnect the keyboard and monitor.  For extra reliability you could secure the Pi and Gooseneck mount in place with some tape.  Write down the exact time you start the time lapse; you’ll want to know this at the end of the week.
 
@@ -246,26 +246,26 @@ Remember that producing the final time lapse film will be much quicker on a mode
 
 The image files will always remain however many times you encode the film file, so the final time lapse film can be rebuilt as many times as is necessary. One approach might be to try different video filter scales or frame rates on each attempt.  Refer to the test run section if you need a reminder of what the different parts of the avconv command mean.  If encoding on the Raspberry Pi, it is recommended to first build the video with a scale video filter as in the command below;  as before, enter the entire command on one line.
 
-    ```
-    avconv –r 10 –i cress_%04d.jpg –r 10
-    –vcodec libx264 –crf 20 -g 15 
-    -vf scale=1296:972 cress_timelapse.mp4
-    ```
+```
+avconv –r 10 –i cress_%04d.jpg –r 10
+–vcodec libx264 –crf 20 -g 15 
+-vf scale=1296:972 cress_timelapse.mp4
+```
 
 This will take longer than the test run to finish as there are more frames to encode.  When you are returned to the command prompt you can play back the film using the following command:
 
-    `omxplayer cress_timelapse.mp4 –o hdmi`
+`omxplayer cress_timelapse.mp4 –o hdmi`
 
 If you’re happy with the way it looks, you could then rebuild the film at full resolution by leaving out the video filter part of the command.  This will take a lot longer on the Pi, but the end product will look better if uploaded to social media.  Here is the command:
 
-    ```
-    avconv –r 10 –i cress_%04d.jpg –r 10 
-    –vcodec libx264 –crf 20 -g 15 
-    cress_timelapse_full.mp4
-    ```
+```
+avconv –r 10 –i cress_%04d.jpg –r 10 
+–vcodec libx264 –crf 20 -g 15 
+cress_timelapse_full.mp4
+```
 
 Once complete the full video can be played back using the following command:
 
-    `omxplayer cress_timelapse_full.mp4 –o hdmi`
+`omxplayer cress_timelapse_full.mp4 –o hdmi`
 
 To finish off it would be nice to send each pupil home with a copy of the final time lapse video, along with their fully grown cress egg head.
