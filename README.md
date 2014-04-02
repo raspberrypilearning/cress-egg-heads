@@ -213,7 +213,7 @@ Once you have identified a suitable filming location, set up the Raspberry Pi, C
 
 If there are multiple cress egg heads, try to get them all in the shot.  Remember that still images will appear a little more zoomed out than the camera preview.  Once you’re satisfied with the position of the camera and egg heads, you can press `Ctrl – C` to stop the preview.
 
-Now you’re ready to start the time lapse recording.  Firstly, we need to work out the interval time and total time in milliseconds to give to the raspistill command.  One hour is 1000 * 60 * 60 = 3600000.  One day is 3600000 * 24 = 86400000.  One week is 86400000 * 7 = 604800000.  Therefore our final command should be this:
+Now you’re ready to start the time lapse recording.  Firstly, we need to work out the interval time and total time in milliseconds to give to the raspistill command.  One hour is 1000 x 60 x 60 = 3600000.  One day is 3600000 x 24 = 86400000.  One week is 86400000 x 7 = 604800000.  Therefore our final command should be this:
 
 `raspistill –o cress_%04d.jpg –tl 3600000 –t 604800000`
 
