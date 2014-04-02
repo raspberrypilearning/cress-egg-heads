@@ -1,53 +1,52 @@
-#Cress Egg Heads 
+# Cress Egg Heads
 
-Time lapse photography with the Raspberry Pi Camera Board.
-
+A fun time-lapse photography project with the Raspberry Pi Camera Board and cress seed
 
 ![](./images/cover.jpg "Cover Image")
 
-##Lesson objectives
+## Lesson objectives
 
-*	Understand what time lapse photography is
-*	Understand how cress seeds germinate and grow
-*	Understand how to make a time lapse film
+- Understand what time lapse photography is
+- Understand how cress seeds germinate and grow
+- Understand how to make a time lapse film
 
-##Lesson outcomes
+## Lesson outcomes
 
-*	To have grown some cress from seeds
-*	To have made one or more cress egg heads
-*	To have recorded a time lapse film of them growing over a period of 1 week
-*	To play back the time lapse film and see the cress growing rapidly
+- To have grown some cress from seeds
+- To have made one or more cress egg heads
+- To have recorded a time lapse film of them growing over a period of 1 week
+- To play back the time lapse film and see the cress growing rapidly
 
-##Time
+## Time
 
-*	1-2 hour initially for setting up
-*	Further attendance spread over 1 week (or so) as the cress grows
-*	1 hour to wrap up
+- 1-2 hour initially for setting up
+- Further attendance spread over 1 week (or so) as the cress grows
+- 1 hour to wrap up
 
-##Requirements
+## Requirements
 
-*	An area with sunlight that can be left undisturbed for long periods of time
-*	Eggs
-*	Saucepan to boil the eggs in
-*	Egg cup holders
-*	Cotton wool
-*	Washing up liquid and bowl
-*	Pencils or crayons
-*	Kitchen roll
-*	Flip book (if possible, can be about anything)
-*	Dinner knife
-*	Teaspoon
-*	Plate
-*	Plastic spray bottle with trigger
-*	Packet of cress seeds (£1.55 from B&Q)
-*	Raspberry Pi
-*	Micro USB power adaptor
-*	An SD card with Raspbian already set up through NOOBS
-*	USB keyboard
-*	HDMI cable
-*	A monitor or TV
-*	Raspberry Pi Camera Board
-*	Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
+- An area with sunlight that can be left undisturbed for long periods of time
+- Eggs
+- Saucepan to boil the eggs in
+- Egg cup holders
+- Cotton wool
+- Washing up liquid and bowl
+- Pencils or crayons
+- Kitchen roll
+- Flip book (if possible, can be about anything)
+- Dinner knife
+- Teaspoon
+- Plate
+- Plastic spray bottle with trigger
+- Packet of cress seeds (£1.55 from B&Q)
+- Raspberry Pi
+- Micro USB power adaptor
+- An SD card with Raspbian already set up through NOOBS
+- USB keyboard
+- HDMI cable
+- A monitor or TV
+- Raspberry Pi Camera Board
+- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
 
 ##Introduction
 
@@ -98,8 +97,8 @@ First check that you have all the parts you need to get your Raspberry Pi set up
 
 ### Activity Checklist
 
-1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card. 
-2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor. 
+1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card.
+2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor.
 3.	Plug a USB keyboard into a USB slot on the Pi.
 4.	Plug in the micro USB power supply and you should see some text appear on your screen.
 5.	When prompted to login type:
@@ -117,7 +116,7 @@ Next set up the 360 Gooseneck Mount.  This will allow you to aim the camera at t
 
 ![](./images/camera-mount.jpg "Camera Board 360 Gooseneck Mount")
 
-One end of the mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck. 
+One end of the mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
 
 After you have logged into the Raspberry Pi again, you can take a still image using the following command:
 
@@ -151,16 +150,16 @@ Use the following command to install avconv.  You only need to do this once.
 This will ask to download about 20 MB of data; say yes and allow the install to proceed.  It will take several minutes.  Once complete, you can use the command below to construct the video file from the individual images.  Enter it all on one line.
 
 ```
-avconv –r 10 –i test_%04d.jpg –r 10 
-–vcodec libx264 –crf 20 -g 15 
+avconv –r 10 –i test_%04d.jpg –r 10
+–vcodec libx264 –crf 20 -g 15
 test_timelapse.mp4
 ```
 
 This will make a video at the same resolution as the individual images (2592 x 1944 pixels).  You’ll notice it's quite slow on the Raspberry Pi.  Press `Ctrl – C` to abort the encoding process.  You can speed this up by scaling down each image as they’re stitched into the final film; the command below will do just that.
 
 ```
-avconv –r 10 –i test_%04d.jpg –r 10 
-–vcodec libx264 –crf 20 -g 15 
+avconv –r 10 –i test_%04d.jpg –r 10
+–vcodec libx264 –crf 20 -g 15
 -vf scale=1296:972 test_timelapse.mp4
 ```
 
@@ -248,7 +247,7 @@ The image files will always remain however many times you encode the film file, 
 
 ```
 avconv –r 10 –i cress_%04d.jpg –r 10
-–vcodec libx264 –crf 20 -g 15 
+–vcodec libx264 –crf 20 -g 15
 -vf scale=1296:972 cress_timelapse.mp4
 ```
 
@@ -259,8 +258,8 @@ This will take longer than the test run to finish as there are more frames to en
 If you’re happy with the way it looks, you could then rebuild the film at full resolution by leaving out the video filter part of the command.  This will take a lot longer on the Pi, but the end product will look better if uploaded to social media.  Here is the command:
 
 ```
-avconv –r 10 –i cress_%04d.jpg –r 10 
-–vcodec libx264 –crf 20 -g 15 
+avconv –r 10 –i cress_%04d.jpg –r 10
+–vcodec libx264 –crf 20 -g 15
 cress_timelapse_full.mp4
 ```
 
@@ -269,3 +268,13 @@ Once complete the full video can be played back using the following command:
 `omxplayer cress_timelapse_full.mp4 –o hdmi`
 
 To finish off it would be nice to send each pupil home with a copy of the final time lapse video, along with their fully grown cress egg head.
+
+## LICENCE
+
+Unless otherwise specified, everything in this repository is covered by the following licence:
+
+![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+***Cress Egg Heads*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+Based on a work at https://github.com/raspberrypilearning/cress-egg-heads
