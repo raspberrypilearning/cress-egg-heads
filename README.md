@@ -64,9 +64,9 @@ Wrap up by explaining that if we make cress egg heads, we can use the technique 
 
 ##Step 1: Making a cress egg head
 
-Begin by soft boiling the egg in a saucepan.  Take care to avoid splashing hot water and burning yourself.  Boil for no more than 3 minutes.  Remove the egg using the spoon and allow to cool before handling.
+Begin by soft-boiling the egg in a saucepan - you should ask for some help from an adult. Boil for no more than 3 minutes.  Remove the egg using the spoon and allow to cool before handling.
 
-Remove the top of the egg with the knife, as you would if you were going to eat it.  Take care to avoid cracking the remaining shell of the egg.
+Remove the top of the egg with the knife, as you would if you were going to eat it.  Take care to avoid cracking the rest of the shell.
 
 Use the spoon to scoop out all of the cooked egg from the inside of the eggshell.  Your aim is to have a completely empty shell; don’t worry if you spill some yolk on the outside.
 
