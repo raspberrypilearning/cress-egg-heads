@@ -21,7 +21,7 @@ A fun time-lapse photography project with the Raspberry Pi Camera Board and cres
 
 - 1-2 hour initially for setting up
 - Further attendance spread over 1 week (or so) as the cress grows
-- 1 hour to wrap up
+- 2 hours to wrap up
 
 ## Requirements
 
