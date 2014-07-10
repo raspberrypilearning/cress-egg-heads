@@ -25,6 +25,25 @@ A fun time-lapse photography project with the Raspberry Pi Camera Board and cres
 
 ## Requirements
 
+As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need:
+
+### Hardware
+
+- Raspberry Pi
+- Micro USB power adaptor
+- An SD card with Raspbian already set up through NOOBS
+- USB keyboard
+- HDMI cable
+- A monitor or TV
+- Raspberry Pi Camera Board
+- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
+
+### Software
+
+- libav-tools (instructions provided on the worksheet below)
+
+### Extras
+
 - An area with sunlight that can be left undisturbed for long periods of time
 - Eggs
 - Saucepan to boil the eggs in
@@ -39,14 +58,20 @@ A fun time-lapse photography project with the Raspberry Pi Camera Board and cres
 - Plate
 - Plastic spray bottle with trigger
 - Packet of cress seeds (£1.55 from B&Q)
-- Raspberry Pi
-- Micro USB power adaptor
-- An SD card with Raspbian already set up through NOOBS
-- USB keyboard
-- HDMI cable
-- A monitor or TV
-- Raspberry Pi Camera Board
-- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
+
+## Steps
+
+1. Making a cress egg head
+1. Setting Up your Pi
+1. Setting up the Camera Board
+1. Recording a short time lapse test run
+1. Start recording the main time lapse film
+1. Letting the cress grow and looking after it
+1. Creating the time lapse film file
+
+## Worksheet
+
+- [The worksheet](./WORKSHEET.md)
 
 ## LICENCE
 
