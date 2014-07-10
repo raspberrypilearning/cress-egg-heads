@@ -17,12 +17,6 @@ A fun time-lapse photography project with the Raspberry Pi Camera Board and cres
 - To have recorded a time lapse film of them growing over a period of 1 week
 - To play back the time lapse film and see the cress growing rapidly
 
-## Time
-
-- 1-2 hour initially for setting up
-- Further attendance spread over 1 week (or so) as the cress grows
-- 1 hour to wrap up
-
 ## Requirements
 
 As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need:
@@ -58,6 +52,12 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 - Plate
 - Plastic spray bottle with trigger
 - Packet of cress seeds (£1.55 from B&Q)
+
+### Time
+
+- 1-2 hour initially for setting up
+- Further attendance spread over 1 week (or so) as the cress grows
+- 1 hour to wrap up
 
 ## Steps
 
