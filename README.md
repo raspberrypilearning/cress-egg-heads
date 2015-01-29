@@ -46,7 +46,7 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ## Worksheet
 
-- [The worksheet](WORKSHEET.md)
+- [The worksheet](worksheet.md)
 
 ## LICENCE
 
