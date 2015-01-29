@@ -2,20 +2,17 @@
 
 A fun time-lapse photography project with the Raspberry Pi Camera Board and cress seed
 
-![](./images/cover.jpg "Cover Image")
+![](images/cover.jpg)
 
-## Lesson objectives
+## What you will make
 
-- Understand what time lapse photography is
-- Understand how cress seeds germinate and grow
-- Understand how to make a time lapse film
+In this resource you will grow some cress from seeds and record a time-lapse film of them growing over a period of one week.
 
-## Lesson outcomes
+## What you will learn
 
-- To have grown some cress from seeds
-- To have made one or more cress egg heads
-- To have recorded a time lapse film of them growing over a period of 1 week
-- To play back the time lapse film and see the cress growing rapidly
+- What time-lapse photography is
+- How cress seeds germinate and grow
+- How to make a time-lapse film
 
 ## Requirements
 
@@ -23,18 +20,12 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ### Hardware
 
-- Raspberry Pi
-- Micro USB power adaptor
-- An SD card with Raspbian already set up through NOOBS
-- USB keyboard
-- HDMI cable
-- A monitor or TV
 - Raspberry Pi Camera Board
-- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount "ModMyPi | RPi Camera Board 360 Gooseneck Mount"))
+- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount))
 
 ### Software
 
-- libav-tools (instructions provided on the worksheet below)
+- libav
 
 ### Extras
 
@@ -51,27 +42,11 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 - Teaspoon
 - Plate
 - Plastic spray bottle with trigger
-- Packet of cress seeds (£1.55 from B&Q)
-
-### Time
-
-- 1-2 hour initially for setting up
-- Further attendance spread over 1 week (or so) as the cress grows
-- 1 hour to wrap up
-
-## Steps
-
-1. Making a cress egg head
-1. Setting Up your Pi
-1. Setting up the Camera Board
-1. Recording a short time lapse test run
-1. Start recording the main time lapse film
-1. Letting the cress grow and looking after it
-1. Creating the time lapse film file
+- Packet of cress seeds
 
 ## Worksheet
 
-- [The worksheet](./WORKSHEET.md)
+- [The worksheet](WORKSHEET.md)
 
 ## LICENCE
 
