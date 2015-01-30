@@ -25,7 +25,9 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ### Software
 
-- libav
+- libav-tools
+
+See more information on installing this package on the [software installation](software.md) page.
 
 ### Extras
 
