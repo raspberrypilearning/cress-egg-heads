@@ -1,7 +1,7 @@
-- name:
-  img:
+- name: Raspberry Pi Camera Board
+  img: camera-board
   url:
-- name:
-  img:
-  url:
+- name: Camera Board 360 Gooseneck Mount
+  img: gooseneck-mount
+  url: https://www.modmypi.com/flexible-camera-mount
   
