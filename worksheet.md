@@ -202,4 +202,7 @@ Once complete the full video can be played back using the following command:
 omxplayer cress_timelapse_full.mp4 –o hdmi
 ```
 
-To finish off it would be nice to send each pupil home with a copy of the final time-lapse video, along with their fully grown cress egg head.
+## What next?
+
+- To finish off it would be nice to send each pupil home with a copy of the final time-lapse video, along with their fully grown cress egg head.
+- Or alternatively you may wish to upload the video to YouTube.
