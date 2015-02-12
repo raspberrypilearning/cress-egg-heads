@@ -102,7 +102,7 @@ If you want to delete all the files from this test run then use the following co
 rm test_*.*
 ```
 
-##Step 5: Start recording the main time-lapse film
+## Start recording the main time-lapse film
 
 Before you start time-lapse recording the cress egg heads there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be somewhere warm with sunlight that can be left *undisturbed* for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
 
