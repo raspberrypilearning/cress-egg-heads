@@ -1,3 +1,5 @@
+You'll also need:
+
 - An area with sunlight that can be left undisturbed for long periods of time
 - Eggs
 - Saucepan to boil the eggs in
