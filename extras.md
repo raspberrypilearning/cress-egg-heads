@@ -14,3 +14,4 @@ You'll also need:
 - Plate
 - Plastic spray bottle with trigger
 - Packet of cress seeds
+- Raspberry Pi camera mount (optional)
