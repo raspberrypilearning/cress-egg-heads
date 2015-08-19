@@ -1,10 +1,10 @@
 # Cress Egg Heads
 
-Plants grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and watch plants sprouting!
+Plants grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and watch them sprout!
 
 Imagine we took a photograph of the same landscape every hour for a day: if we were to play those 24 images back at normal film speed, it would appear as if time were moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
 
-We are going to use the technique of time-lapse photography to watch cress growing on our egg heads. The only trouble is we need to let the time elapse and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
+We are going to use the technique of time-lapse photography to watch cress growing on our egg heads. The only trouble is we need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
 
 ## Making a cress egg head
 
@@ -26,13 +26,13 @@ Fill the eggs to the top with cotton wool and dampen with water. Top up with ext
 
 Place the egg into an egg cup, then place the egg cup onto a plate.
 
-Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the plate will catch any excess. That's it; the egg head is now ready to grow. Place the egg cup in a place where it will receive sunlight during the day.
+Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the plate will catch any excess. That's it; the egg head is now ready to grow. Place the egg cup in a spot where it will receive sunlight during the day.
 
 ## Setting up the Camera Board
 
 Follow the [official instructions](http://www.raspberrypi.org/camera) to set up and test the Raspberry Pi Camera Board. Stop once you have successfully used a few of the example commands.
 
-Next set up the 360 Gooseneck Mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording.
+Next set up the camera mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording.
 
 ![](images/camera-mount.jpg)
 
