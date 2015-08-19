@@ -1,20 +1,14 @@
 # Cress Egg Heads
 
-Ideally, begin with a discussion of how plants germinate from seeds and how they require the correct conditions in order to start growing, such as moisture and the correct temperature.
+Plants grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and watch plants sprouting!
 
-Next, discuss the speed at which plants grow. They grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and see it!
+Imagine we took a photograph of the same landscape every hour for a day: if we were to play those 24 images back at normal film speed, it would appear as if time were moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
 
-![](images/intro-flip-book.jpg)
-
-A useful prop to bring out now is a flip book. A flip book contains a series of pictures that change gradually from one page to the next. When the pages are turned rapidly, the picture appears to move. This is the fundamental principle behind all TV cartoons and film footage.
-
-Explain that if we were to capture images of the same landscape every hour for a day, we would end up with 24 pictures. If we were to play back (flip through) those images at normal film speed, it will appear that time is moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
-
-Wrap up by explaining that if we make cress egg heads, we can use the technique of time-lapse photography to speed up time see the hair (cress) appearing to grow. The only trouble is we need to let the time elapse and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
+We are going to use the technique of time-lapse photography to watch cress growing on our egg heads. The only trouble is we need to let the time elapse and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
 
 ## Making a cress egg head
 
-Begin by soft-boiling the egg in a saucepan - you should ask for some help from an adult. Boil for no more than 3 minutes. Remove the egg using the spoon and allow to cool before handling.
+Begin by soft-boiling the egg in a saucepan: you should ask for some help from an adult. Boil for no more than 3 minutes. Remove the egg using the spoon and allow to cool before handling.
 
 Remove the top of the egg with the knife, as you would if you were going to eat it. Take care to avoid cracking the rest of the shell.
 
