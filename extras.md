@@ -13,4 +13,4 @@ You'll also need:
 - Plate
 - Plastic spray bottle with trigger
 - Packet of cress seeds
-- Raspberry Pi camera mount (optional)
+- A camera mount (home-made or [purchased](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount))
