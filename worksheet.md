@@ -197,4 +197,4 @@ omxplayer cress_timelapse_full.mp4 –o hdmi
 ## What next?
 
 - Why not upload the video to YouTube? 
-- Could you use your skills to branch out into stop-motion animation? 
+- Could you use your skills to branch out into [stop-motion animation](https://github.com/raspberrypilearning/push-button-stop-motion/)? 
