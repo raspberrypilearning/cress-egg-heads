@@ -32,11 +32,11 @@ Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the
 
 Follow the [official instructions](http://www.raspberrypi.org/camera) to set up and test the Raspberry Pi Camera Board. Stop once you have successfully used a few of the example commands.
 
-Next set up the camera mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording.
+Next set up a camera mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording. We have chosen this [gooseneck mount]http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount), but you could use an alternative mount if you prefer.
 
 ![](images/camera-mount.jpg)
 
-One end of the mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
+One end of our mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
 
 After you have logged into the Raspberry Pi again, you can take a still image using the following command:
 
