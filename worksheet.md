@@ -1,20 +1,14 @@
 # Cress Egg Heads
 
-Ideally, begin with a discussion of how plants germinate from seeds and how they require the correct conditions in order to start growing, such as moisture and the correct temperature.
+Plants grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and watch them sprout!
 
-Next, discuss the speed at which plants grow. They grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and see it!
+Imagine we took a photograph of the same landscape every hour for a day: if we were to play those 24 images back at normal film speed, it would appear as if time were moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
 
-![](images/intro-flip-book.jpg)
-
-A useful prop to bring out now is a flip book. A flip book contains a series of pictures that change gradually from one page to the next. When the pages are turned rapidly, the picture appears to move. This is the fundamental principle behind all TV cartoons and film footage.
-
-Explain that if we were to capture images of the same landscape every hour for a day, we would end up with 24 pictures. If we were to play back (flip through) those images at normal film speed, it will appear that time is moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
-
-Wrap up by explaining that if we make cress egg heads, we can use the technique of time-lapse photography to speed up time see the hair (cress) appearing to grow. The only trouble is we need to let the time elapse and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
+We are going to use the technique of time-lapse photography to watch cress growing on our egg heads. The only trouble is we need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
 
 ## Making a cress egg head
 
-Begin by soft-boiling the egg in a saucepan - you should ask for some help from an adult. Boil for no more than 3 minutes. Remove the egg using the spoon and allow to cool before handling.
+Begin by soft-boiling the egg in a saucepan: you should ask for some help from an adult. Boil for no more than 3 minutes. Remove the egg using the spoon and allow to cool before handling.
 
 Remove the top of the egg with the knife, as you would if you were going to eat it. Take care to avoid cracking the rest of the shell.
 
@@ -32,17 +26,17 @@ Fill the eggs to the top with cotton wool and dampen with water. Top up with ext
 
 Place the egg into an egg cup, then place the egg cup onto a plate.
 
-Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the plate will catch any excess. That's it; the egg head is now ready to grow. Place the egg cup in a place where it will receive sunlight during the day.
+Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the plate will catch any excess. That's it; the egg head is now ready to grow. Place the egg cup in a spot where it will receive sunlight during the day.
 
 ## Setting up the Camera Board
 
 Follow the [official instructions](http://www.raspberrypi.org/camera) to set up and test the Raspberry Pi Camera Board. Stop once you have successfully used a few of the example commands.
 
-Next set up the 360 Gooseneck Mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording.
+Next set up a camera mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording. We have chosen this [gooseneck mount]http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount), but you could use an alternative mount if you prefer.
 
 ![](images/camera-mount.jpg)
 
-One end of the mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
+One end of our mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
 
 After you have logged into the Raspberry Pi again, you can take a still image using the following command:
 
@@ -104,13 +98,13 @@ rm test_*.*
 
 ## Start recording the main time-lapse film
 
-Before you start time-lapse recording the cress egg heads there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be somewhere warm with sunlight that can be left *undisturbed* for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
+Before you start time-lapse recording the cress egg heads there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be somewhere warm with sunlight that can be left **undisturbed** for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
 
 A power failure will break the sequence of file numbering so you should try to prevent any loss of power after the recording starts. If this does happen you'll need to start again.
 
 Having a man-made light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result. Without this setup, the recording will switch abruptly between light and darkness.
 
-You may also wish to have a network cable plugged in, so that you can log into the Pi remotely and monitor that the file creation process is continuing as expected (read up about SSH).
+You may also wish to have a network cable plugged in, so that you can log into the Pi remotely and monitor that the file creation process is continuing as expected (read up about [SSH](https://www.raspberrypi.org/documentation/remote-access/ssh/)).
 
 Space on the SD card should also be taken into consideration. If you run out of free space half way through the week some footage will be lost. This can be predicted with a simple calculation to ensure there is enough free space on the SD card before starting.
 
@@ -136,7 +130,7 @@ tmpfs            44M     0   44M   0% /run/shm
 ```
 If it looks like you don't have enough space you can use an SD card with a larger capacity.
 
-Once you have identified a suitable filming location, set up the Raspberry Pi, Camera Board, Gooseneck mount, keyboard, monitor and cress egg heads there. Boot up the Raspberry Pi, log in as normal and use the camera preview command to get everything positioned correctly:
+Once you have identified a suitable filming location, set the Raspberry Pi, camera board, camera mount, keyboard, monitor and cress egg heads up there. Boot up the Raspberry Pi, log in as normal and use the camera preview command to get everything positioned correctly:
 
 ```bash
 raspivid -t 0
@@ -152,27 +146,25 @@ raspistill -o cress_%04d.jpg -tl 3600000 -t 604800000
 
 The first image will only be captured after the first hour, so you still have one hour to make any final adjustments and disconnect the keyboard and monitor. For extra reliability you could secure the Pi and Gooseneck mount in place with some tape. Write down the exact time you start the time-lapse; you'll want to know this at the end of the week.
 
-Disconnect the keyboard first and with one final check of the camera preview, remove the monitor cable from the Raspberry Pi without moving anything. *Setup is now complete*. **It should be left undisturbed for 7 days**. A quick visual check that everything is still okay is the red LED on the camera board. If the LED goes off, either the time-lapse recording has finished after 7 days of elapsed time, or the recording has been interrupted by a problem such as loss of power. Occasional checks of the LED are recommended.
+Disconnect the keyboard first and with one final check of the camera preview, remove the monitor cable from the Raspberry Pi without moving anything. Your setup is now complete, and should be left undisturbed for 7 days. A quick visual check to confirm that everything is still okay is to check the red LED on the camera board. If the LED goes off, either the time-lapse recording has finished after 7 days of elapsed time, or the recording has been interrupted by a problem such as loss of power. Occasional checks of the LED are recommended.
 
 ## Letting the cress grow and looking after it
 
 The main priority now is to avoid touching or moving anything to ensure the final time-lapse film will look good.
 
-*Check the cress egg heads at least once a day (preferably more) to ensure the cotton wool does not dry out.*
+Remember to check the cress egg heads at least once a day (preferably more) to ensure the cotton wool does not dry out.
 
-Use the plastic spray bottle to top up the moisture as necessary; it should be damp but not soaking. Often a single spray per eggshell is enough.
+Use the plastic spray bottle to top up the moisture as necessary; the cotton wool should be damp but not soaking. Often a single spray per eggshell is enough.
 
 If the room you have chosen is too cold you may see mould developing, which may mean you'll have to start again. Remember the seeds need warmth, light and water.
 
-If the time-lapse is being recorded on school premises, it can be nice to select one pupil per day to join the teacher for watering the cress. This extends the sense of investment the pupils have in the project beyond just making the cress egg heads at the start. This may also motivate them to work hard and behave in other classes so that they are chosen for this task.
-
-When the cress starts to grow it may lean towards the direction of the sunlight; this is normal. This can be mitigated to a certain extent by rotating the egg cups to face the opposite way; however this will be noticeable in the final time-lapse film.
+When the cress starts to grow, it may lean towards the direction of the sunlight; this is normal. This can be mitigated to a certain extent by rotating the egg cups to face the opposite way; however this will be noticeable in the final time-lapse film.
 
 ## Creating the time-lapse film file
 
 The cress should be gaining some height by the end of the week. Wait for the red LED on the camera board to go out before retrieving the images. This should happen exactly one week, to the minute, after you started the time-lapse.
 
-Reconnect the monitor and keyboard and use the ls command. You should find that about 170 images have been created. These files must be preserved carefully; it's a good idea to back them up onto a USB flash drive. If you want to move the Raspberry Pi back to the classroom before encoding the time-lapse video, ensure you shut the Pi down using the `sudo halt` command. This will shut down the Pi safely and cleanly; it is generally advisable to wait for the *ACT* (activity) LED to stop blinking on the Pi before removing the power cable.
+Reconnect the monitor and keyboard and use the `ls` command. You should find that about 170 images have been created. These files must be preserved carefully; it's a good idea to back them up onto a USB flash drive. If you want to move the Raspberry Pi back to the classroom before encoding the time-lapse video, ensure you shut the Pi down using the `sudo halt` command. This will shut down the Pi safely and cleanly; it is generally advisable to wait for the ACT (activity) LED to stop blinking on the Pi before removing the power cable.
 
 Remember that producing the final time-lapse film will be much quicker on a modern desktop PC. The Pi can perform the task but it will require more time for processing the film.
 
@@ -204,5 +196,5 @@ omxplayer cress_timelapse_full.mp4 –o hdmi
 
 ## What next?
 
-- To finish off it would be nice to send each pupil home with a copy of the final time-lapse video, along with their fully grown cress egg head.
-- Or alternatively you may wish to upload the video to YouTube.
+- Why not upload the video to YouTube? 
+- Could you use your skills to branch out into [stop-motion animation](https://github.com/raspberrypilearning/push-button-stop-motion/)? 
