@@ -1,10 +1,12 @@
 # Cress Egg Heads
 
-Plants grow far too slowly for us to see it happening. However, there is a trick that we can use to speed up time and watch them sprout!
+Plants grow far too slowly for you to see it happening. However, there is a trick that you can use to speed up time and watch them sprout!
 
-Imagine we took a photograph of the same landscape every hour for a day: if we were to play those 24 images back at normal film speed, it would appear as if time were moving very fast. We would see the sun rise, move through the sky and set in just a few moments. This is what we call a time-lapse film.
+If a photo is taken every minute, for instance, the photos can be stitched together into a movie or a gif and the time between frames reduced to a fraction of a second. This is what we call a time-lapse film.
 
-We are going to use the technique of time-lapse photography to watch cress growing on our egg heads. The only trouble is we need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in. But first we'll need to make some cress egg heads!
+![flower](images/flower.gif)
+
+You are going to use the technique of time-lapse photography to watch cress growing on some egg heads. The only trouble is you need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in. But first you'll need to make some cress egg heads!
 
 ## Making a cress egg head
 
@@ -30,41 +32,84 @@ Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the
 
 ## Setting up the Camera Board
 
-Follow the [official instructions](http://www.raspberrypi.org/camera) to set up and test the Raspberry Pi Camera Board. Stop once you have successfully used a few of the example commands.
+You can use the first two sections of the [Getting Started with PiCamera](https://www.raspberrypi.org/learning/getting-started-with-picamera/worksheet/) to test you camera and learn how to take a preview using Python.
 
-Next set up a camera mount. This will allow you to aim the camera at the cress egg heads and hold it steady for the duration of the time-lapse recording. We have chosen this [gooseneck mount]http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount), but you could use an alternative mount if you prefer.
+It's a good idea to place your camera in a mount, to keep it still during the timelapse shots. You could make your own or use a commerical one like [thih](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount)
 
 ![](images/camera-mount.jpg)
 
-One end of our mount inserts into the headphone jack on the Pi; it only uses this to hold itself in place and does nothing to the jack. The other end is a screw with a pair of plastic washers that secure the camera board to the Gooseneck.
+With the camera in the mount, use the `preview` script from [Getting Started with PiCamera](https://www.raspberrypi.org/learning/getting-started-with-picamera/worksheet/) to test it's pointing at the egg heads and has all of them in focus.
 
-After you have logged into the Raspberry Pi again, you can take a still image using the following command:
+## Taking a test shot
 
-```bash
-raspistill -o test.jpg -t 5000
+Using a little bit of Python you can now set up the camera to take a single photograph to begin with, and then start taking multiple shots at timed intervals.
+
+Go to `Menu` > `Programming` > `Python 3 (IDLE)` to open up a Python shell. Then click on `File` > `New File`. Click `File` > `Save` and call your file `cresseggs.py`
+
+The first part of your script will be fairly simple. Import the `picamera` library and the `time` library to begin with. You'll also need to initiate the camera.
+
+``` python
+from picamera import PiCamera
+from time import sleep
+camera = PiCamera()
 ```
 
-This will take a still image and save it to a file called `test.jpg` after a five second delay. The `-o` means output and the `-t` means time. Here we're specifying 5000 milliseconds or 5 seconds.
+Next you can start a preview, wait a few seconds, capture and image and then close the preview.
 
-If you now use the `ls` command you'll see the file `test.jpg` is shown in the list. It would obviously be too time-consuming to sit in front of the Raspberry Pi for a whole week running this command every hour. Fortunately, there is a way to automate this process which will allow the Raspberry Pi to record the time-lapse film completely unattended.
-
-## Recording a short time-lapse test run
-
-It's a good idea to perform a dry run first, as this will familiarise you with the process before attempting a longer time-lapse. You can discard the images afterwards. The command below will automatically capture an image every 10 seconds for 10 minutes. Time must be specified in milliseconds, so 10 seconds is 10000 and ten minutes is 600000.
-
-```bash
-raspistill -o test_%04d.jpg -tl 10000 -t 600000
+``` python
+camera.start_preview()
+sleep(5)
+camera.capture('image.jpg')
+camera.stop_preview()
 ```
 
-The `-o` specifies the output as before, the `-tl` is the interval to take pictures at and `-t` is the total recording time. The `%04d` will add a four digit sequential number at the end of each filename:
+Save (`ctrl+s`) and run (`F5`) your code and after 5 seconds and image should appear in your home folder (or whatever directory you saved your script in). If you double click it, it will open and you should see a still shot of your cress egg-heads.
 
+To take multiple shots, a simple `while True` loop will enable the camera to keep taking photos every 5 seconds.
+
+Alter your code so it looks like this.
+
+``` python
+while True:
+    sleep(5)
+    camera.capture('image.jpg')
 ```
-test_0001.jpg		test_0002.jpg ...
+
+Run the code and see what happens. You can end the script after a minute or so, by hitting `ctrl+c` on your keyboard.
+
+Have a look in your home folder. There's only one image!
+
+This is because the name of the image that is captured does not change, so it is constantly written over. You need to make sure that the image name keeps changing each time.
+
+To do this you can use a variable to count the image number, and string formating to use that number in the image name.
+
+``` python
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+image_number = 0
+while True:
+    sleep(5)
+    image_name = 'image{0:04d}.jpg'.format(image_number)
+    camera.capture(image_name)
+    image_number += 1
 ```
 
-Avoid moving the camera for best results; even a tiny movement will look like a huge jolt when you play back the final time-lapse film. While the time-lapse is recording you will see the camera preview window, with periodic flashes of the still images as they are taken. Allow the ten minutes to elapse; the camera preview will then stop and you'll be returned to the command prompt.
+The first line sets the `image_number` variable to be 0, then the loop begins. The fourth line uses the image_number to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it is 4 digits long.
 
-Use the `ls` command again and you should see roughly 60 images have been created. Now run `ls -lh`. This will list the files with their sizes in human readable format. Look just to the left of the date on each row. The sizes will probably range between 2 and 3 MB.
+You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
+
+Now save and run your program to see what happens. Do you see lots of images beign created in your directory?
+
+Quit your script with `ctrl+c`
+
+## Setting up the real timelapse
+
+
+
+## Creating a time lapse video
 
 Let's take this test run all the way to the end. Next we need to stitch the 60 or so images together to form a film file that can be played back. There are a set of tools called avconv (audio video convert) that we can use for this.
 
