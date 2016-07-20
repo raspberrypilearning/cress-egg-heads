@@ -110,8 +110,6 @@ Quit your script with `ctrl+c`
 Before you start time-lapse recording the cress egg heads there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be 
 somewhere warm with sunlight that can be left **undisturbed** for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
 
-A power failure will break the sequence of file numbering so you should try to prevent any loss of power after the recording starts. If this does happen you'll need to start again.
-
 Having a man-made light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result. Without this setup, the recording will switch abruptly between light and darkness.
 
 If you are using a fresh sd card with Raspbian installed this next part can be ignored, otherwise space on the SD card should also be taken into consideration. If you run out of free space half way through the week some footage will be lost. This can be predicted with a simple calculation to ensure there is enough free space on the SD card before starting.
