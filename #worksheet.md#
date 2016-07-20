@@ -104,8 +104,8 @@ You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename
 Now save and run your program to see what happens. Do you see lots of images being created in your directory?
 
 Quit your script with `ctrl+c`
-
-## Setting up for the real time-lapse
+nnn
+## Setting up for the real timelapse
 
 Before you start time-lapse recording the cress egg heads there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be 
 somewhere warm with sunlight that can be left **undisturbed** for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
@@ -155,9 +155,9 @@ tmpfs            38M     0   38M   0% /run/user/1000
 You're only interested in the top number in the `Avail` column. Here it is showing 3.6 gigabytes of space left.
 
 So multiply 3.6 by 1,000,000 tells you there are 3,600,000 kilobytes of space left on the microSD card.
-With each image taking up 4024 kilobytes; 3,600,000 divided by 4024 is approximately 895 images.
+With each image taking up 4024 kilobytes; 3,600,000 divided by 4024 is approxiamtely 895 images.
 
-If there were to be one image captured every hour, that would mean that 895 ÷ 24 which is around 37 days of photographs, which in this case is more than enough to capture some cress seeds growing.
+If there were to be one image captured evey hour, that would mean that 895 ÷ 24 which is around 37 days of photographs, which in this case is more than enough to capture some cress seeds growing.
 
 ## Creating a time lapse sequence
 
@@ -193,13 +193,13 @@ When the cress starts to grow, it may lean towards the direction of the sunlight
 
 ## Creating a time lapse video
 
-Once the image sequence has been captured you need to stitch the images together to form a film file that can be played back. There are a set of tools called avconv (audio video convert) that you can use for this.
+Once the image sequence has been cpatured you need to stitch the images together to form a film file that can be played back. There are a set of tools called avconv (audio video convert) that you can use for this.
 
 ```bash
 avconv -r 10 -i image%04d.jpg -r 10 -vcodec libx264 -crf 20 -g 15 timelapse.mp4
 ```
 
-The `-r` specifies the video frame rate. Here we're using 10 frames a second; this is adequate for a time-lapse film. It's used twice to avoid avconv dropping similar looking frames. The `-i` is the input filename; notice the `%04d`. This is because your images have names with 4 digit numbers in them.
+The `-r` specifies the video frame rate. Here we're using 10 frames a second; this is adequate for a time-lapse film. It's used twice to avoid avconv dropping similar looking frames. The `-i` is the input filename; notice the `%04d`. This is becuase your images have names with 4 digit numbers in them.
 
 The `-vcodec` specifies the codec (encode/decode) format of the video you're making. We've specified H264; YouTube uses this codec for streaming. The `-crf` specifies the compression quality level. 20 is an average value; lower numbers give higher quality but also increase file size. The `-g` specifies the GOP value; this is needed if you upload the video to YouTube later.
 
