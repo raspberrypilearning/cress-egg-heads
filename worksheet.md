@@ -73,9 +73,9 @@ Using a little bit of Python, you can now set up the camera to take a single pho
         camera.capture('image.jpg')
     ```
 
-Run the code and see what happens. You can end the script after a minute or so, by pressing `Ctrl+C` on your keyboard.
+    Run the code and see what happens. You can end the script after a minute or so, by pressing `Ctrl+C` on your keyboard.
 
-Have a look in your home directory. There's only one image! This is because the name of the image that is captured doesn't change, so it's constantly overwritten. 
+    Have a look in your home directory. There's only one image! This is because the name of the image that is captured doesn't change, so it's constantly overwritten. 
 
 1. You need to make sure that the image name keeps changing each time. To do this, you can use a variable to count the number of images taken, and use string formatting to use that number in the image name:
 
@@ -93,15 +93,15 @@ Have a look in your home directory. There's only one image! This is because the 
         image_number += 1
     ```
 
-The line before the loop begins sets the `image_number` variable to be 0. Within the loop, `image_number` is used to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it's 4 digits long (`{0:04d}`). You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
+    The line before the loop begins sets the `image_number` variable to be 0. Within the loop, `image_number` is used to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it's 4 digits long (`{0:04d}`). You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
 
-Now save and run your program to see what happens. Do you see lots of images being created in your directory? Quit your script with `Ctrl+C`.
+    Now save and run your program to see what happens. Do you see lots of images being created in your directory? Quit your script with `Ctrl+C`.
 
 ## Setting up for the real time-lapse
 
 Before you start time-lapse recording the cress egg heads, there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be somewhere warm with sunlight that can be left **undisturbed** for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
 
-Having a man-made light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result. Without this setup, the recording will switch abruptly between light and darkness.
+Having an electric light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result. Without this setup, the recording will switch abruptly between light and darkness.
 
 If you're using a fresh SD card with Raspbian installed this next part can be ignored, otherwise space on the SD card should also be taken into consideration. If you run out of free space halfway through the week, some footage will be lost. This can be predicted with a simple calculation to ensure there's enough free space on the SD card before starting.
 
