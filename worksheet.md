@@ -48,30 +48,30 @@ Using a little bit of Python, you can now set up the camera to take a single pho
 
 1. The first part of your script will be fairly simple. Import the `picamera` library and the `time` library to begin with. You'll also need to initialise the camera:
 
-``` python
-from picamera import PiCamera
-from time import sleep
-camera = PiCamera()
-```
+    ``` python
+    from picamera import PiCamera
+    from time import sleep
+    camera = PiCamera()
+    ```
 
 1. Next, you can start a preview, wait a few seconds, capture an image and then close the preview:
 
-``` python
-camera.start_preview()
-sleep(5)
-camera.capture('image.jpg')
-camera.stop_preview()
-```
+    ``` python
+    camera.start_preview()
+    sleep(5)
+    camera.capture('image.jpg')
+    camera.stop_preview()
+    ```
 
 1. Save (`Ctrl+S`) and run (`F5`) your code, and after 5 seconds an image should appear in your home folder (or whatever directory you saved your script in). If you double-click it, it will open and you should see a still shot of your cress egg heads.
 
 1. To take multiple shots, a simple `while True` loop will enable the camera to keep taking photos every 5 seconds. Alter your code so it looks like this:
 
-``` python
-while True:
-    sleep(5)
-    camera.capture('image.jpg')
-```
+    ``` python
+    while True:
+        sleep(5)
+        camera.capture('image.jpg')
+    ```
 
 Run the code and see what happens. You can end the script after a minute or so, by pressing `Ctrl+C` on your keyboard.
 
@@ -79,19 +79,19 @@ Have a look in your home directory. There's only one image! This is because the 
 
 1. You need to make sure that the image name keeps changing each time. To do this, you can use a variable to count the number of images taken, and use string formatting to use that number in the image name:
 
-``` python
-from picamera import PiCamera
-from time import sleep
+    ``` python
+    from picamera import PiCamera
+    from time import sleep
 
-camera = PiCamera()
+    camera = PiCamera()
 
-image_number = 0
-while True:
-    sleep(5)
-    image_name = 'image{0:04d}.jpg'.format(image_number)
-    camera.capture(image_name)
-    image_number += 1
-```
+    image_number = 0
+    while True:
+        sleep(5)
+        image_name = 'image{0:04d}.jpg'.format(image_number)
+        camera.capture(image_name)
+        image_number += 1
+    ```
 
 The line before the loop begins sets the `image_number` variable to be 0. Within the loop, `image_number` is used to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it's 4 digits long (`{0:04d}`). You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
 
@@ -107,43 +107,43 @@ If you're using a fresh SD card with Raspbian installed this next part can be ig
 
 1. The first thing to do is to check the size of the images your camera has been taking. The Pi camera image size will default to your screen resolution unless told otherwise, so image sizes may vary.
 
-To check the size of an image, open a terminal and type the following command:
+    To check the size of an image, open a terminal and type the following command:
 
-``` bash
-du -h image0001.jpg
-```
+    ``` bash
+    du -h image0001.jpg
+    ```
 
-You should get something that looks like this:
+    You should get something that looks like this:
 
-``` bash
-4024	image0001.jpg
-```
+    ``` bash
+    4024	image0001.jpg
+    ```
 
-The number on the right is the number of kilobytes of space the image takes up.
+    The number on the right is the number of kilobytes of space the image takes up.
 
 1. Next, you can see how much space you have left on your micro SD card, by typing:
 
-```bash
-df -h
-```
+    ```bash
+    df -h
+    ```
 
-You should get something like this:
+    You should get something like this:
 
-``` bash
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/root       7.2G  3.3G  3.6G  49% /
-devtmpfs        182M     0  182M   0% /dev
-tmpfs           186M     0  186M   0% /dev/shm
-tmpfs           186M  4.5M  182M   3% /run
-tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-tmpfs           186M     0  186M   0% /sys/fs/cgroup
-/dev/mmcblk0p1   63M   21M   43M  33% /boot
-tmpfs            38M     0   38M   0% /run/user/1000
-```
+    ``` bash
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/root       7.2G  3.3G  3.6G  49% /
+    devtmpfs        182M     0  182M   0% /dev
+    tmpfs           186M     0  186M   0% /dev/shm
+    tmpfs           186M  4.5M  182M   3% /run
+    tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+    tmpfs           186M     0  186M   0% /sys/fs/cgroup
+    /dev/mmcblk0p1   63M   21M   43M  33% /boot
+    tmpfs            38M     0   38M   0% /run/user/1000
+    ```
 
-You're only interested in the top number in the `Avail` column. Here, it's showing 3.6 gigabytes of space left.
+    You're only interested in the top number in the `Avail` column. Here, it's showing 3.6 gigabytes of space left.
 
-So multiplying 3.6 by 1,000,000 tells you there are 3,600,000 kilobytes of space left on the micro SD card. With each image taking up 4024 kilobytes, 3,600,000 divided by 4024 is approximately 895 images. If there was to be one image captured every hour, that would mean 895 ÷ 24 or around 37 days of photographs, which in this case is more than enough to capture some cress seeds growing.
+    So multiplying 3.6 by 1,000,000 tells you there are 3,600,000 kilobytes of space left on the micro SD card. With each image taking up 4024 kilobytes, 3,600,000 divided by 4024 is approximately 895 images. If there was to be one image captured every hour, that would mean 895 ÷ 24 or around 37 days of photographs, which in this case is more than enough to capture some cress seeds growing.
 
 ## Creating a time-lapse sequence
 
