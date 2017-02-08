@@ -10,7 +10,7 @@ You're going to use the technique of time-lapse photography to watch cress growi
 
 ## Making a cress egg head
 
-1. Begin by soft-boiling the egg in a saucepan: you should ask for some help from an adult. Boil for no more than 3 minutes. Remove the egg using the spoon and allow to cool before handling.
+1. Begin by soft-boiling the egg in a saucepan: you should ask for some help from an adult. Boil for no more than three minutes. Remove the egg using the spoon and allow to cool before handling.
 
 1. Remove the top of the egg with the knife, as you would if you were going to eat it. Take care to avoid cracking the rest of the shell.
 
