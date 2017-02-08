@@ -179,7 +179,7 @@ When the cress starts to grow, it may lean towards the direction of the sunlight
 
 ## Creating a time-lapse video
 
-Once the image sequence has been captured, you need to stitch the images together to form a film file that can be played back. There's a set of tools called avconv (audio video convert) that you can use for this. Look at the following command:
+Once the image sequence has been captured, you need to stitch the images together to form a film file that can be played back. There's a set of tools called audio video convert (avconv) that you can use for this. Look at the following command:
 
 ```bash
 avconv -r 10 -i image%04d.jpg -r 10 -vcodec libx264 -crf 20 -g 15 timelapse.mp4
