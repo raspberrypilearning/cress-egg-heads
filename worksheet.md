@@ -24,7 +24,7 @@ You're going to use the technique of time-lapse photography to watch cress growi
 
 1. Fill the eggs to the top with cotton wool and dampen with water. Top up with extra cotton wool and dampen again if necessary. The cotton wool should reach the top of the hole in the eggshell.
 
-![](images/making-cress-egg-head.jpg)
+    ![](images/making-cress-egg-head.jpg)
 
 1. Place the egg into an egg cup, then place the egg cup onto a plate.
 
