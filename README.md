@@ -20,8 +20,8 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ### Hardware
 
-- Raspberry Pi Camera Board
-- Camera Board 360 Gooseneck Mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount))
+- Raspberry Pi Camera Module
+- Camera Module 360 gooseneck mount (from [modmypi.com](https://www.modmypi.com/flexible-camera-mount))
 
 ### Software
 
