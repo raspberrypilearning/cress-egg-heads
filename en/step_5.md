@@ -1,6 +1,6 @@
 ## Setting up the Camera Module
 
-You can use the first two sections of the [Getting Started with PiCamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/worksheet/) to test your camera and learn how to take a preview using Python.
+You can use the first two sections of the [Getting Started with PiCamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/) to test your camera and learn how to take a preview using Python.
 
 It's a good idea to place your camera in a mount, to keep it still during the time-lapse shots. You could make your own, or use a commercial one like [this](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount).
 
