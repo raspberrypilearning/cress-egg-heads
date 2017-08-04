@@ -4,7 +4,7 @@ hero_image: images/banner.png
 description: A fun time-lapse photography project with the Raspberry Pi Camera Board
   and cress seed
 original_url: https://raspberrypi.org/learning/cress-egg-heads
-theme: red
+theme: green
 duration: 2
 listed: true
 ingredient: false
