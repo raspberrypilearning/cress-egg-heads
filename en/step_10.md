@@ -13,6 +13,6 @@ The `-vcodec` specifies the codec (encode/decode) format of the video you're mak
 Once the encoding process has finished, you'll be returned to the command prompt. It may take a while to finish so be patient; maybe it's time for a cup of tea. When the process has completed, you can use the command below to play back the film on the Raspberry Pi:
 
 ```bash
-omxplayer test_timelapse.mp4 -o hdmi
+omxplayer timelapse.mp4 -o hdmi
 ```
 
