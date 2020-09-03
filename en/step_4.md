@@ -4,7 +4,7 @@ Using a little bit of Python, you can now set up the camera to take a single pho
 
 --- task ---
 
-Go to `Menu` > `Programming` > `Python 3 (IDLE)` to open up a Python shell, then click on `File` > `New File`. Click on `File` > `Save` and call your file `cresseggheads.py`.
+Go to `Menu` > `Programming` > `Thonny Python IDE` to open up a Python shell. `Save` and call your file `cresseggheads.py`.
 
 --- /task ---
 
