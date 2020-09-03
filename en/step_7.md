@@ -1,48 +1,21 @@
-## Setting up for the real time-lapse
+## Creating a time-lapse video
 
-Before you start time-lapse recording the cress egg heads, there are several things you should consider. The most important is the physical location where the recording will take place. This needs to be somewhere warm with sunlight that can be left **undisturbed** for a whole week; a classroom windowsill might not be ideal. Even slight movements will be noticeable in the final cut.
+Once the image sequence has been captured, you need to stitch the images together to form a film file that can be played back. There's a set of tools called ffmpeg that you can use for this.
 
-Having an electric light source on the cress egg heads will allow growth to be recorded at night, and will make for a nicer end result. Without this setup, the recording will switch abruptly between light and darkness.
+--- task ---
 
-If you're using a fresh SD card with Raspbian installed this next part can be ignored, otherwise space on the SD card should also be taken into consideration. If you run out of free space halfway through the week, some footage will be lost. This can be predicted with a simple calculation to ensure there's enough free space on the SD card before starting.
+Open a terminal and make sure you are in the directory with all your images. Then type:
 
-- The first thing to do is to check the size of the images your camera has been taking. The Pi camera image size will default to your screen resolution unless told otherwise, so image sizes may vary.
+```bash
+ffmpeg -r 10 -i image%04d.jpg -r 10 -vcodec libx264 -crf 20 -g 15 timelapse.mp4
+```
 
-    To check the size of an image, open a terminal and type the following command:
+--- /task ---
 
-    ``` bash
-    du -h image0001.jpg
-    ```
+The `-r` specifies the video frame rate. Here we're using 10 frames a second; this is adequate for a time-lapse film. It's used twice to avoid ffmpeg dropping similar-looking frames. The `-i` is the input filename; notice the `%04d`. This is because your images have names with 4-digit numbers in them.
 
-    You should get something that looks like this:
+The `-vcodec` specifies the codec (encode/decode) format of the video you're making. We've specified H264; YouTube uses this codec for streaming. The `-crf` specifies the compression quality level. 20 is an average value; lower numbers give higher quality but also increase file size. The `-g` specifies the GOP value; this is needed if you upload the video to YouTube later.
 
-    ``` bash
-    4024	image0001.jpg
-    ```
+Once the encoding process has finished, you'll be returned to the command prompt. It may take a while to finish so be patient; maybe it's time for a cup of tea. When the process has completed, you can use the command below to play back the film on the Raspberry Pi, using the VLC media player.
 
-    The number on the right is the number of kilobytes of space the image takes up.
-
-- Next, you can see how much space you have left on your micro SD card, by typing:
-
-    ```bash
-    df -h
-    ```
-
-    You should get something like this:
-
-    ``` bash
-    Filesystem      Size  Used Avail Use% Mounted on
-    /dev/root       7.2G  3.3G  3.6G  49% /
-    devtmpfs        182M     0  182M   0% /dev
-    tmpfs           186M     0  186M   0% /dev/shm
-    tmpfs           186M  4.5M  182M   3% /run
-    tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-    tmpfs           186M     0  186M   0% /sys/fs/cgroup
-    /dev/mmcblk0p1   63M   21M   43M  33% /boot
-    tmpfs            38M     0   38M   0% /run/user/1000
-    ```
-
-    You're only interested in the top number in the `Avail` column. Here, it's showing 3.6 gigabytes of space left.
-
-    So multiplying 3.6 by 1,000,000 tells you there are 3,600,000 kilobytes of space left on the micro SD card. With each image taking up 4024 kilobytes, 3,600,000 divided by 4024 is approximately 895 images. If there was to be one image captured every hour, that would mean 895 ÷ 24 or around 37 days of photographs, which in this case is more than enough to capture some cress seeds growing.
 

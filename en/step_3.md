@@ -1,10 +1,24 @@
-## Cress Egg Heads
+## Setting up the Camera Module
 
-Plants grow far too slowly for you to see it happening. However, there's a trick that you can use to speed up time and watch them sprout!
+You can use the first two sections of the [Getting started with the camera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/) to test your camera and learn how to take a preview using Python.
 
-If a photo is taken every minute, for instance, the photos can be stitched together into a movie or a GIF and the time between frames reduced to a fraction of a second. This is what we call a time-lapse film.
+--- task ---
 
-![flower](images/flower.gif)
+It's a good idea to place your camera in a mount, to keep it still during the time-lapse shots. You could make your own, or use a commercial one like [this](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount).
 
-You're going to use the technique of time-lapse photography to watch cress growing on some egg heads. The only trouble is you need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in, but first you'll need to make some cress egg heads!
+![](images/camera-mount.jpg)
+
+--- /task ---
+
+--- task ---
+
+With the camera in the mount, use the `preview` script from [Getting Started with the camera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/worksheet/) to test that the camera is pointing at the egg heads and has all of them in frame.
+
+--- /task ---
+
+
+
+
+
+
 
