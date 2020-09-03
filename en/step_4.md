@@ -1,22 +1,88 @@
-## Making a cress egg head
+## Taking a test shot
 
-- Begin by soft-boiling the egg in a saucepan: you should ask for some help from an adult. Boil for no more than three minutes. Remove the egg using the spoon and allow to cool before handling.
+Using a little bit of Python, you can now set up the camera to take a single photograph to begin with, and then start taking multiple shots at timed intervals.
 
-- Remove the top of the egg with the knife, as you would if you were going to eat it. Take care to avoid cracking the rest of the shell.
+--- task ---
 
-- Use the spoon to scoop out all of the cooked egg from the inside of the eggshell. Your aim is to have a completely empty shell; don't worry if you spill some yolk on the outside.
+Go to `Menu` > `Programming` > `Python 3 (IDLE)` to open up a Python shell, then click on `File` > `New File`. Click on `File` > `Save` and call your file `cresseggheads.py`.
 
-- Use the washing up liquid and bowl to wash the eggshell inside and out. Just use your fingers and handle the shell with care to avoid cracking it. Make sure there's no dried yolk on the outside.
+--- /task ---
 
-- Leave the egg to dry on some kitchen roll.
+--- task ---
 
-- Once the egg has dried, you can use the crayons and pencils to carefully decorate it. Remember that the hole will be facing upwards, so bear this in mind if you want to draw a face.
+The first part of your script will be fairly simple. Import the `picamera` library and the `time` library to begin with. You'll also need to initialise the camera:
 
-- Fill the eggs to the top with cotton wool and dampen with water. Top up with extra cotton wool and dampen again if necessary. The cotton wool should reach the top of the hole in the eggshell.
+```python
+from picamera import PiCamera
+from time import sleep
+camera = PiCamera()
+```
 
-    ![](images/making-cress-egg-head.jpg)
+--- /task ---
 
-- Place the egg into an egg cup, then place the egg cup onto a plate.
+--- task ---
 
-- Use your finger and thumb to sprinkle some cress seeds onto the cotton wool; the plate will catch any excess. That's it: the egg head is now ready to grow. Place the egg cup in a spot where it will receive sunlight during the day.
+Next, you can start a preview, wait a few seconds, capture an image and then close the preview:
 
+```python
+camera.start_preview()
+sleep(5)
+camera.capture('image.jpg')
+camera.stop_preview()
+```
+
+--- /task ---
+
+--- task ---
+
+Save (`Ctrl+S`) and run (`F5`) your code, and after 5 seconds an image should appear in your home folder (or whatever directory you saved your script in). If you double-click it, it will open and you should see a still shot of your cress egg heads.
+
+--- /task ---
+
+--- task ---
+
+To take multiple shots, a simple `while True` loop will enable the camera to keep taking photos every 5 seconds. Alter your code so it looks like this:
+
+```python
+while True:
+	sleep(5)
+	camera.capture('image.jpg')
+```
+
+--- /task ---
+
+--- task ---
+
+Run the code and see what happens. You can end the script after a minute or so, by pressing `Ctrl+C` on your keyboard.
+
+Have a look in your home directory. There's only one image! This is because the name of the image that is captured doesn't change, so it's constantly overwritten. 
+
+--- /task ---
+
+--- task ---
+
+You need to make sure that the image name keeps changing each time. To do this, you can use a variable to count the number of images taken, and use string formatting to use that number in the image name:
+
+```python
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+image_number = 0
+while True:
+	sleep(5)
+	image_name = 'image{0:04d}.jpg'.format(image_number)
+	camera.capture(image_name)
+	image_number += 1
+```
+
+    The line before the loop begins sets the `image_number` variable to be 0. Within the loop, `image_number` is used to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it's 4 digits long (`{0:04d}`). You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
+
+--- /task ---
+
+--- task ---
+
+Now save and run your program to see what happens. Do you see lots of images being created in your directory? Quit your script with `Ctrl+C`.
+
+--- /task ---
