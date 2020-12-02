@@ -47,7 +47,7 @@ In this resource you will grow some cress from seeds and record a time-lapse fil
 title: Additional information for educators
 ---
 
-You can [download the completed project here](http://rpf.io/p/en/cress-egg-heads-get){:target="_blank"}.
+You can [download the completed project here](https://rpf.io/p/en/cress-egg-heads-get){:target="_blank"}.
 
 If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/cress-egg-heads/print){:target="_blank"}.
 
