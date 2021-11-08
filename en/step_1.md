@@ -1,5 +1,7 @@
 ## Introduction
 
+[[[camera-bullseye]]]
+
 Explore time-lapse photography with a Raspberry Pi and the camera module.
 
 ## What you will make
