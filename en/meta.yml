@@ -1,7 +1,8 @@
 ---
 title: Cress Egg Heads
 hero_image: images/banner.png
-description: A fun time-lapse photography project with the Raspberry Pi Camera Board and cress seed
+description: A fun time-lapse photography project with the Raspberry Pi Camera Board
+  and cress seed
 original_url: https://raspberrypi.org/learning/cress-egg-heads
 theme: green
 duration: 3
@@ -16,12 +17,14 @@ hardware: pi-camera
 software: python
 version: 3
 last_tested: 2020-09-01
-steps: 
+steps:
 - title: Introduction
+  completion: engaged
 - title: Making a cress egg head
 - title: Setting up the Camera Module
 - title: Taking a test shot
 - title: Setting up for the real time-lapse
 - title: Creating a time-lapse sequence
+  completion: internal
 - title: Creating a time-lapse video
 - title: What next?
