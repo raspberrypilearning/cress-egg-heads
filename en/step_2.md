@@ -4,7 +4,7 @@ Plants grow far too slowly for you to see it happening. However, there's a trick
 
 If a photo is taken every minute, for instance, the photos can be stitched together into a movie or a GIF and the time between frames reduced to a fraction of a second. This is what we call a time-lapse film.
 
-![flower](images/flower.gif)
+![Time lapse animation showing a flower and the petals opening](images/flower.gif)
 
 You're going to use the technique of time-lapse photography to watch cress growing on some egg heads. The only trouble is you need to let the time pass and capture the images along the way. This is where the Raspberry Pi comes in, but first you'll need to make some cress egg heads!
 
@@ -44,7 +44,7 @@ Once the egg has dried, you can use the crayons and pencils to carefully decorat
 
 Fill the eggs to the top with cotton wool and dampen with water. Top up with extra cotton wool and dampen again if necessary. The cotton wool should reach the top of the hole in the eggshell.
 
-![](images/making-cress-egg-head.jpg)
+![Cracked open eggshell with cotton wool inside and cress seeds on top of the cotton wool](images/making-cress-egg-head.jpg)
 
 --- /task ---
 
