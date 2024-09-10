@@ -1,20 +1,33 @@
-## Setting up the Camera Module
-
-You can use the first two sections of the [Getting started with the camera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/) to test your camera and learn how to take a preview using Python.
+## Grow the cress
 
 --- task ---
 
-It's a good idea to place your camera in a mount, to keep it still during the time-lapse shots. You could make your own, or use a commercial one like [this](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount).
-
-![](images/camera-mount.jpg)
+Wash your eggshell inside and out, taking care to avoid cracking it. Leave the egg to dry.
 
 --- /task ---
 
 --- task ---
 
-With the camera in the mount, use the `preview` script from [Getting Started with the camera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/worksheet/) to test that the camera is pointing at the egg heads and has all of them in frame.
+Once the egg has dried, you can use the crayons and pencils to carefully decorate it. Remember that the hole will be facing upwards, so bear this in mind if you want to draw a face.
 
 --- /task ---
+
+--- task ---
+
+Fill the eggshell to the top with cotton wool and dampen with water. The cotton wool should reach the top of the hole in the eggshell.
+
+![Cracked open eggshell with cotton wool inside and cress seeds on top of the cotton wool](images/making-cress-egg-head.jpg)
+
+--- /task ---
+
+--- task ---
+
+Place the egg into an egg cup, then sprinkle some cress seeds onto the cotton wool.
+
+Leave the egg cup in a spot where it will receive sunlight during the day.
+
+--- /task ---
+
 
 
 

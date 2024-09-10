@@ -4,6 +4,8 @@ Explore time-lapse photography with a Raspberry Pi and the camera module.
 
 Record a time-lapse film of some cress seeds growing over a period of one week.
 
+![Two halved eggs with cress growing in them. Faces have been drawn on the egg so that the cress looks like hair.](images/cover.jpg)
+
 --- collapse ---
 ---
 title: What you will need
@@ -12,7 +14,8 @@ title: What you will need
 
 + A Raspberry Pi Computer with the latest Raspberry Pi OS
 + A Raspberry Pi Camera module
-+ A hard boiled egg
++ An empty egg shell (ask an adult to boil and scrape out the egg for you)
++ Egg cup 
 + Cotton wool
 + Cress seeds
 
