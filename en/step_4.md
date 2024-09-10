@@ -33,7 +33,7 @@ cam = Camera()
 
 --- collapse ---
 ---
-title: I see an error message
+title: I see an error message 
 ---
 
 Check that you have installed the `picamzero` software, using the instructions on the first page of this project.
