@@ -24,7 +24,7 @@ steps:
   completion:
   - engaged
 - title: Take a test shot
-- title: Setting up for the real time-lapse
+- title: Setting up for a time-lapse
 - title: Creating a time-lapse sequence
 - title: Creating a time-lapse video
   completion:

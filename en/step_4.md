@@ -30,16 +30,6 @@ from picamzero import Camera
 from time import sleep
 cam = Camera()
 --- /code ---
-
---- collapse ---
----
-title: I see an error message 
----
-
-Check that you have installed the `picamzero` software, using the instructions on the first page of this project.
-
---- /collapse ---
-
 --- /task ---
 
 --- task ---
@@ -63,6 +53,16 @@ cam.stop_preview()
 --- task ---
 
 Save and run your code. After 5 seconds an image called `cress.jpg` should appear in the same directory you saved your Python code in. Open it to see a photograph of your cress egg heads.
+
+--- collapse ---
+---
+title: It didn't work?
+---
+
+- Check that you have installed the `picamzero` software, using the instructions on the first page of this project.
+- Check that you are looking in the same folder as your Python code for the image.
+
+--- /collapse ---
 
 --- /task ---
 
