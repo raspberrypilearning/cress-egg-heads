@@ -1,5 +1,7 @@
 ## Take a test shot
 
+First, check that your camera is working and positioned correctly.
+
 --- task ---
 With your Raspberry Pi switched off, connect your camera module.
 
@@ -28,6 +30,15 @@ from picamzero import Camera
 from time import sleep
 cam = Camera()
 --- /code ---
+
+--- collapse ---
+---
+title: I see an error message
+---
+
+Check that you have installed the `picamzero` software, using the instructions on the first page of this project.
+
+--- /collapse ---
 
 --- /task ---
 
