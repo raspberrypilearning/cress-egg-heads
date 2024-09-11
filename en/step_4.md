@@ -9,7 +9,9 @@ With your Raspberry Pi switched off, connect your camera module.
 --- /task ---
 
 --- task ---
-Position your Raspberry Pi near your egg, and point the camera in the right direction. Switch on the Raspberry Pi. 
+Position your Raspberry Pi near your egg, and point the camera in the right direction - you may find a camera mount helpful if you have one. Switch on the Raspberry Pi. 
+
+![A Raspberry Pi with a camera mount attached](images/camera-mount.jpg)
 --- /task ---
 
 --- task ---
