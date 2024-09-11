@@ -11,7 +11,7 @@ Change your program so that it captures a sequence of 12 images, at 2 seconds ap
 language: python
 line_numbers: true
 line_number_start: 1
-line_highlights: 4
+line_highlights: 4-9
 ---
 from picamzero import Camera
 
@@ -45,7 +45,7 @@ This code will take one picture every hour, for a whole day (24 hours).
 language: python
 line_numbers: true
 line_number_start: 1
-line_highlights: 4
+line_highlights: 4-9
 ---
 from picamzero import Camera
 
