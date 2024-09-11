@@ -4,7 +4,7 @@ Now that you have checked your camera is working and that your egg is in shot, y
 
 --- task ---
 
-Change your program so that it captures a sequence of images:
+Change your program so that it captures a sequence of 12 images, at 2 seconds apart:
 
 --- code ---
 ---
@@ -16,13 +16,18 @@ line_highlights: 4
 from picamzero import Camera
 
 cam = PiCamera()
-cam.capture_sequence("cress.jpg", num_images=12, interval=2, make_video=True)
+cam.capture_sequence(
+        "cress.jpg", 
+        num_images=12, 
+        interval=2, 
+        make_video=True
+)
 --- /code ---
 
 --- /task ---
 
 --- task ---
-Save and run your program. This program will take 12 images, at 2 seconds apart. It will also create a video called `cress.mp4` using the images.
+Save and run your program, then look at the images that have been taken. The program will also create a video called `cress.mp4` using the images.
 --- /task ---
 
 Now that you know how to use `capture_sequence` to create a time-lapse, you can set it up to run over a longer period of time by changing the parameters.
@@ -45,7 +50,12 @@ line_highlights: 4
 from picamzero import Camera
 
 cam = PiCamera()
-cam.capture_sequence("cress.jpg", num_images=24, interval=3600, make_video=True)
+cam.capture_sequence(
+    "cress.jpg", 
+    num_images=24, 
+    interval=3600, 
+    make_video=True
+)
 --- /code ---
 
 --- /task ---
