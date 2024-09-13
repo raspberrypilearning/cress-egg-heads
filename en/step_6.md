@@ -1,28 +1,62 @@
 ## Creating a time-lapse sequence
 
+Now that you have checked your camera is working and that your egg is in shot, you can set up a time-lapse sequence. 
+
 --- task ---
 
-You can now make a slight edit to your script, so that images are taken every hour rather than every five seconds:
+Change your program so that it captures a sequence of 12 images, at 2 seconds apart:
 
-```python
-from picamera import PiCamera
-from time import sleep
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 4-9
+---
+from picamzero import Camera
 
-camera = PiCamera()
-
-image_number = 0
-while True:
-    sleep(3600)
-    image_name = 'image{0:04d}.jpg'.format(image_number)
-    camera.capture(image_name)
-    image_number += 1
-```
+cam = PiCamera()
+cam.capture_sequence(
+        "cress.jpg", 
+        num_images=12, 
+        interval=2, 
+        make_video=True
+)
+--- /code ---
 
 --- /task ---
 
 --- task ---
+Save and run your program, then look at the images that have been taken. The program will also create a video called `cress.mp4` using the images.
+--- /task ---
 
-Now run your script and leave it to record the images. Once your cress has finished growing (after a few days), you can stop the script with `Ctrl+C`.
+Now that you know how to use `capture_sequence` to create a time-lapse, you can set it up to run over a longer period of time by changing the parameters.
+
+--- task ---
+
+Change the parameters in your script so that it runs for a longer time. For example, if you want to take one image every hour, the `interval` can be calculated as:
+
+60 seconds in one minute * 60 minutes in 1 hour = 3600 seconds
+
+This code will take one picture every hour, for a whole day (24 hours).
+
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 4-9
+---
+from picamzero import Camera
+
+cam = PiCamera()
+cam.capture_sequence(
+    "cress.jpg", 
+    num_images=24, 
+    interval=3600, 
+    make_video=True
+)
+--- /code ---
 
 --- /task ---
 
@@ -33,15 +67,11 @@ title: Letting the cress grow and looking after it
 
 ---
 
-The main priority now is to avoid touching or moving anything, to ensure the final time-lapse film will look good.
+Avoid touching or moving your cress to ensure the final time-lapse film will look good.
 
-Remember to check the cress egg heads at least once a day (preferably more), to ensure the cotton wool does not dry out.
-
-Use the plastic spray bottle to top up the moisture as necessary; the cotton wool should be damp but not soaking. Often a single spray per eggshell is enough.
+Remember to check the cress egg heads regularly, and spray with water to ensure the cotton wool does not dry out.
 
 If the room you have chosen is too cold you may see mould developing, which may mean you'll have to start again. Remember that the seeds need warmth, light, and water.
-
-When the cress starts to grow, it may lean towards the direction of the sunlight; this is normal. This can be mitigated to a certain extent by rotating the egg cups to face the opposite way; however, this will be noticeable in the final time-lapse film.
 
 --- /collapse ---
 

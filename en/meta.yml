@@ -19,14 +19,13 @@ version: 3
 last_tested: 2020-09-01
 steps:
 - title: Introduction
-- title: Making a cress egg head
-- title: Setting up the Camera Module
+- title: What is a time-lapse?
+- title: Grow the cress
   completion:
   - engaged
-- title: Taking a test shot
-- title: Setting up for the real time-lapse
+- title: Take a test shot
+- title: Setting up for a time-lapse
 - title: Creating a time-lapse sequence
-- title: Creating a time-lapse video
   completion:
   - internal
 - title: What next?

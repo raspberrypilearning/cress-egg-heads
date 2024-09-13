@@ -1,88 +1,70 @@
-## Taking a test shot
+## Take a test shot
 
-Using a little bit of Python, you can now set up the camera to take a single photograph to begin with, and then start taking multiple shots at timed intervals.
+First, check that your camera is working and positioned correctly.
 
 --- task ---
+With your Raspberry Pi switched off, connect your camera module.
 
-Go to `Menu` > `Programming` > `Thonny Python IDE` to open up a Python shell. `Save` and call your file `cresseggheads.py`.
+[[[rpi-picamera-connect-camera]]]
+--- /task ---
 
+--- task ---
+Position your Raspberry Pi near your egg, and point the camera in the right direction - you may find a camera mount helpful if you have one. Switch on the Raspberry Pi. 
+
+![A Raspberry Pi with a camera mount attached](images/camera-mount.jpg)
+--- /task ---
+
+--- task ---
+From the **Programming** menu, open Thonny. Save your file as `cresseggheads.py`.
 --- /task ---
 
 --- task ---
 
-The first part of your script will be fairly simple. Import the `picamera` library and the `time` library to begin with. You'll also need to initialise the camera:
+Add some code to import the `picamzero` and `time` libraries, and create the camera:
 
-```python
-from picamera import PiCamera
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+---
+from picamzero import Camera
 from time import sleep
-camera = PiCamera()
-```
-
+cam = Camera()
+--- /code ---
 --- /task ---
 
 --- task ---
 
-Next, you can start a preview, wait a few seconds, capture an image and then close the preview:
+Underneath, add code to start a preview, wait a few seconds, take a photo and then close the preview:
 
-```python
-camera.start_preview()
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 4
+---
+cam.start_preview()
 sleep(5)
-camera.capture('image.jpg')
-camera.stop_preview()
-```
+cam.take_photo('cress.jpg')
+cam.stop_preview()
+--- /code ---
 
 --- /task ---
 
 --- task ---
 
-Save (`Ctrl+S`) and run (`F5`) your code, and after 5 seconds an image should appear in your home folder (or whatever directory you saved your script in). If you double-click it, it will open and you should see a still shot of your cress egg heads.
+Save and run your code. After 5 seconds an image called `cress.jpg` should appear in the same directory you saved your Python code in. Open it to see a photograph of your cress egg heads.
+
+--- collapse ---
+---
+title: It didn't work?
+---
+
+- Check that you have installed the `picamzero` software, using the instructions on the first page of this project.
+- Check that you are looking in the same folder as your Python code for the image.
+
+--- /collapse ---
 
 --- /task ---
 
---- task ---
-
-To take multiple shots, a simple `while True` loop will enable the camera to keep taking photos every 5 seconds. Alter your code so it looks like this:
-
-```python
-while True:
-	sleep(5)
-	camera.capture('image.jpg')
-```
-
---- /task ---
-
---- task ---
-
-Run the code and see what happens. You can end the script after a minute or so, by pressing `Ctrl+C` on your keyboard.
-
-Have a look in your home directory. There's only one image! This is because the name of the image that is captured doesn't change, so it's constantly overwritten. 
-
---- /task ---
-
---- task ---
-
-You need to make sure that the image name keeps changing each time. To do this, you can use a variable to count the number of images taken, and use string formatting to use that number in the image name:
-
-```python
-from picamera import PiCamera
-from time import sleep
-
-camera = PiCamera()
-
-image_number = 0
-while True:
-	sleep(5)
-	image_name = 'image{0:04d}.jpg'.format(image_number)
-	camera.capture(image_name)
-	image_number += 1
-```
-
-    The line before the loop begins sets the `image_number` variable to be 0. Within the loop, `image_number` is used to create a string called `image_name`. The name is made up of the strings `image` and `.jpg` but in between those strings is the image number, padded so it's 4 digits long (`{0:04d}`). You could alter `{0:04d}` to `{0:02d}` for instance, if you only wanted filename numbers that were two digits long.
-
---- /task ---
-
---- task ---
-
-Now save and run your program to see what happens. Do you see lots of images being created in your directory? Quit your script with `Ctrl+C`.
-
---- /task ---
