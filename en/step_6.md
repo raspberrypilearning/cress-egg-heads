@@ -15,7 +15,7 @@ line_highlights: 4-9
 ---
 from picamzero import Camera
 
-cam = PiCamera()
+cam = Camera()
 cam.capture_sequence(
         "cress.jpg", 
         num_images=12, 
@@ -49,7 +49,7 @@ line_highlights: 4-9
 ---
 from picamzero import Camera
 
-cam = PiCamera()
+cam = Camera()
 cam.capture_sequence(
     "cress.jpg", 
     num_images=24, 
