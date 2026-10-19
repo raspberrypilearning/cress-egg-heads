@@ -25,7 +25,7 @@ title: What you will need
 
 ```bash
 sudo apt update 
-sudo apt install python3-picamera
+sudo apt install python3-picamzero
 ```
 
 --- /collapse ---
